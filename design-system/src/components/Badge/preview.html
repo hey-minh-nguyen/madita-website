@@ -1,0 +1,12 @@
+<!-- @dsCard group="Text" height=70 -->
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><title>Badge – Vorschau</title></head>
+<body>
+<div id="root" class="md-row"></div>
+<script>
+  var M = window.Madita, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null, h(M.Badge, null, 'Kununu Top Company'), h(M.Badge, { tone: 'brand' }, '4.2 ★ Glassdoor'), h(M.Badge, { tone: 'light' }, 'Neu')));
+</script>
+</body>
+</html>

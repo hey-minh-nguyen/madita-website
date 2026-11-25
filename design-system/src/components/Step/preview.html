@@ -1,0 +1,15 @@
+<!-- @dsCard group="Inhalt" height=160 -->
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><title>Step – Vorschau</title></head>
+<body>
+<div id="root" class="md-row" style="align-items:flex-start;gap:40px"></div>
+<script>
+  var M = window.Madita, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null,
+    h(M.Step, { number: 1, title: 'Briefing', active: true }, 'Stelle anlegen, Kriterien gewichten, Interview kalibrieren.'),
+    h(M.Step, { number: 2, title: 'Interview' }, 'Madita spricht mit allen Bewerber:innen, wann es ihnen passt.'),
+    h(M.Step, { number: 3, title: 'Auswertung' }, 'Alle Kandidat:innen vergleichbar auf einen Blick.')));
+</script>
+</body>
+</html>

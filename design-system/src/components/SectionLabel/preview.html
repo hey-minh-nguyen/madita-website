@@ -1,0 +1,15 @@
+<!-- @dsCard group="Text" height=80 -->
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><title>SectionLabel – Vorschau</title></head>
+<body>
+<div id="root" class="md-row"></div>
+<script>
+  var M = window.Madita, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null,
+    h(M.SectionLabel, null, 'So funktioniert’s'),
+    h(M.SectionLabel, null, 'Praxiserfahrungen'),
+    h('span', { className: 'md-stage--brand', style: { padding: 12, borderRadius: 10 } }, h(M.SectionLabel, { tone: 'accent' }, 'Selbst ausprobieren · ohne Konto'))));
+</script>
+</body>
+</html>

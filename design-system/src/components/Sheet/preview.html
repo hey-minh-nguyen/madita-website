@@ -1,0 +1,19 @@
+<!-- @dsCard group="Ergänzungen" height=420 -->
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><title>Sheet – Vorschau</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var M = window.Madita, h = React.createElement;
+  function Demo() {
+    var s = React.useState(true);
+    return h(React.Fragment, null,
+      h('div', { className: 'md-stage' }, h(M.Button, { onClick: function () { s[1](true); } }, 'Menü öffnen')),
+      h(M.Sheet, { open: s[0], onClose: function () { s[1](false); }, links: [{ label: 'Produkt' }, { label: 'Branchen' }, { label: 'Preise' }, { label: 'Compliance' }, { label: 'Über uns' }] },
+        h(M.Button, { variant: 'dark' }, 'Kostenlos ausprobieren')));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

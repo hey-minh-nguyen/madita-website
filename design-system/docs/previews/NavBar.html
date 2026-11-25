@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="de">
+<head><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400..800&display=swap"><link rel="stylesheet" href="../tokens.css"><link rel="stylesheet" href="../bundle.css"><script src="../vendor/react.production.min.js"></script><script src="../vendor/react-dom.production.min.js"></script><script src="../bundle.js"></script><meta name="robots" content="noindex"><style>body{margin:0;background:var(--surface)}</style><meta charset="utf-8"><title>NavBar – Vorschau</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var M = window.Madita, h = React.createElement;
+  var links = [{ label: 'Produkt' }, { label: 'Branchen' }, { label: 'Compliance' }, { label: 'Über uns' }];
+  ReactDOM.createRoot(document.getElementById('root')).render(h(M.NavBar, { links: links, logoSrc: '../assets/logos/madita-logo-grey.svg', autoHide: false }));
+</script>
+</body>
+</html>

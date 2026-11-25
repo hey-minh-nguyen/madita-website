@@ -1,0 +1,15 @@
+<!-- @dsCard group="Ergänzungen" height=330 -->
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><title>Field – Vorschau</title></head>
+<body>
+<div id="root" class="md-stage" style="display:grid;gap:24px"></div>
+<script>
+  var M = window.Madita, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null,
+    h(M.Field, { label: 'Name', placeholder: 'Vor- und Nachname', hint: 'So sprechen wir Sie an.' }),
+    h(M.Field, { label: 'Firmen-E-Mail-Adresse', type: 'email', defaultValue: 'name@', error: 'Bitte eine vollständige E-Mail-Adresse eingeben.' }),
+    h(M.Field, { label: 'Nachricht', multiline: true, placeholder: 'Wie viele Interviews führen Sie pro Monat?' })));
+</script>
+</body>
+</html>

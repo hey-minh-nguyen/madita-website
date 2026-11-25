@@ -1,0 +1,15 @@
+<!-- @dsCard group="Ergänzungen" height=200 -->
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><title>Tabs – Vorschau</title></head>
+<body>
+<div id="root" class="md-stage"></div>
+<script>
+  var M = window.Madita, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(M.Tabs, { label: 'Ansichten', items: [
+    { label: 'Briefing', content: h('p', { className: 'md-lead' }, 'Stelle anlegen, Kriterien gewichten, Interview kalibrieren.') },
+    { label: 'Interview', content: h('p', { className: 'md-lead' }, 'Madita spricht mit allen Bewerber:innen, wann es ihnen passt.') },
+    { label: 'Auswertung', content: h('p', { className: 'md-lead' }, 'Alle Kandidat:innen vergleichbar auf einen Blick.') } ] }));
+</script>
+</body>
+</html>

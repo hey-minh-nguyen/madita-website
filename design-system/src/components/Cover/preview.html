@@ -1,0 +1,60 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>madita.ai</title>
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--surface); color:var(--ink); font-family:var(--font-body); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; }
+  .block { position:absolute; border-radius:var(--radius-lg); }
+  .block--lime { left:316px; top:-24px; width:188px; height:152px; background:var(--lime); }
+  .block--indigo { left:316px; top:144px; width:188px; height:168px; background:var(--indigo); }
+  .stage { position:absolute; left:124px; top:24px; width:240px; height:240px; border-radius:var(--radius-lg); overflow:hidden; background:var(--grey-05); }
+  .stage video, .stage img { display:block; width:100%; height:100%; object-fit:cover; }
+  .float { position:absolute; background:var(--surface); border-radius:var(--radius-md); box-shadow:var(--shadow-overlay); font-family:var(--font-heading); color:var(--ink); }
+  .status { left:52px; top:40px; display:flex; align-items:center; gap:8px; height:32px; padding:0 14px; border-radius:var(--radius-pill); font-size:12px; font-weight:700; }
+  .dot { width:8px; height:8px; border-radius:50%; background:var(--success); }
+  .chip { left:292px; top:96px; display:grid; gap:4px; padding:12px 16px; font-size:11px; white-space:nowrap; }
+  .chip span { color:var(--ink-strong); font-weight:600; }
+  .chip b { font-size:16px; }
+  .score { left:32px; top:176px; width:184px; padding:12px 14px; font-size:11px; }
+  .score__head { display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; font-weight:700; font-size:12px; }
+  .score__head span { height:20px; display:inline-flex; align-items:center; padding:0 8px; border-radius:var(--radius-pill); background:var(--lime); font-size:10px; }
+  .row { display:grid; grid-template-columns:76px 1fr; align-items:center; gap:8px; margin-top:6px; color:var(--ink-strong); font-weight:600; }
+  .row i { height:5px; border-radius:3px; background:var(--indigo-10); position:relative; overflow:hidden; }
+  .row i::after { content:""; position:absolute; inset:0 auto 0 0; width:var(--w); background:var(--indigo); border-radius:3px; }
+  .words { position:absolute; left:var(--space-6); bottom:var(--space-8); max-width:440px; }
+  .logo { display:block; height:64px; width:auto; }
+  .tag { margin:var(--space-4) 0 0; font-family:var(--font-body); font-size:14px; line-height:20px; color:var(--ink); }
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="art" aria-hidden="true">
+    <div class="block block--lime"></div>
+    <div class="block block--indigo"></div>
+    <div class="stage">
+      <video autoplay muted loop playsinline poster="/_blob/5ba1874454d213dcb9b5abdfb9cc37f4">
+        <source src="/_blob/dd8a8083ff664a1cb7fde0af42929d44" type="video/webm">
+        <source src="/_blob/530459744137e32723cf4ea37413a71f" type="video/mp4">
+      </video>
+    </div>
+    <div class="float status"><span class="dot"></span>Madita ist online</div>
+    <div class="float chip"><span>Interview abgeschlossen</span><b>22:57</b></div>
+    <div class="float score">
+      <div class="score__head">Auswertung <span>Score 85</span></div>
+      <div class="row">Kommunikation<i style="--w:92%"></i></div>
+      <div class="row">Erfahrung<i style="--w:78%"></i></div>
+      <div class="row">Motivation<i style="--w:86%"></i></div>
+    </div>
+  </div>
+  <div class="words">
+    <img class="logo" src="/_blob/46be558fee5923f76c6ba1e93bd4a241" alt="madita.ai">
+    <p class="tag">KI-Interviews in menschlicher Qualität</p>
+  </div>
+</div>
+</body>
+</html>

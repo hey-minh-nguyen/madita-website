@@ -1,0 +1,13 @@
+<!-- @dsCard group="Inhalt" height=100 -->
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><title>LogoMarquee – Vorschau</title></head>
+<body>
+<div id="root" class="md-stage"></div>
+<script>
+  var M = window.Madita, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(M.LogoMarquee, { duration: 30 },
+    ['Logo A', 'Logo B', 'Logo C', 'Logo D', 'Logo E', 'Logo F'].map(function (t) { return h('span', { key: t, style: { fontFamily: 'var(--font-heading)', fontWeight: 800, color: 'var(--grey-40)', fontSize: 22 } }, t); })));
+</script>
+</body>
+</html>

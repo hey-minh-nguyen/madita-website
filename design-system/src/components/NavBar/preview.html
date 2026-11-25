@@ -1,0 +1,13 @@
+<!-- @dsCard group="Navigation" height=120 -->
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><title>NavBar – Vorschau</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var M = window.Madita, h = React.createElement;
+  var links = [{ label: 'Produkt' }, { label: 'Branchen' }, { label: 'Compliance' }, { label: 'Über uns' }];
+  ReactDOM.createRoot(document.getElementById('root')).render(h(M.NavBar, { links: links, logoSrc: '/_blob/46be558fee5923f76c6ba1e93bd4a241', autoHide: false }));
+</script>
+</body>
+</html>

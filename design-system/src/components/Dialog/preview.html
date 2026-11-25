@@ -1,0 +1,21 @@
+<!-- @dsCard group="Ergänzungen" height=420 -->
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><title>Dialog – Vorschau</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var M = window.Madita, h = React.createElement;
+  function Demo() {
+    var s = React.useState(true);
+    return h(React.Fragment, null,
+      h('div', { className: 'md-stage' }, h(M.Button, { onClick: function () { s[1](true); } }, 'Demo anfragen')),
+      h(M.Dialog, { open: s[0], onClose: function () { s[1](false); }, title: 'Erleben Sie ein Interview mit Madita' },
+        h('p', { className: 'md-lead', style: { marginBottom: 24 } }, 'Die Auswertung kommt per E-Mail.'),
+        h(M.Field, { label: 'Firmen-E-Mail-Adresse', type: 'email', placeholder: 'name@firma.de' }),
+        h('div', { style: { marginTop: 24 } }, h(M.Button, null, 'Interview starten'))));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

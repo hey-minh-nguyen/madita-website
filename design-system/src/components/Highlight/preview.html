@@ -1,0 +1,12 @@
+<!-- @dsCard group="Text" height=140 -->
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><title>Highlight – Vorschau</title></head>
+<body>
+<div id="root" class="md-stage"></div>
+<script>
+  var M = window.Madita, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h('h2', { className: 'md-h2' }, '„Ich liebe KI. ', h(M.Highlight, null, 'Ich liebe es.'), '“'));
+</script>
+</body>
+</html>

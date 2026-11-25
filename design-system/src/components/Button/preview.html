@@ -1,0 +1,20 @@
+<!-- @dsCard group="Aktionen" height=150 -->
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><title>Button – Vorschau</title></head>
+<body>
+<div id="root" class="md-stage"></div>
+<script>
+  var M = window.Madita, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { style: { display: 'grid', gap: 16 } },
+    h('div', { className: 'md-row', style: { padding: 0 } },
+      h(M.Button, null, 'Kostenlos ausprobieren'),
+      h(M.Button, { variant: 'dark' }, 'Kostenlos ausprobieren'),
+      h(M.Button, { variant: 'outline', icon: 'arrow' }, 'In jede Sprache reinhören')),
+    h('div', { className: 'md-row md-stage--brand', style: { borderRadius: 15 } },
+      h(M.Button, { variant: 'accent' }, 'Interview starten'),
+      h(M.Button, { variant: 'inverse' }, 'Kostenlos ausprobieren'),
+      h(M.Button, { variant: 'accent', size: 'xs' }, 'Selbst ausprobieren · ohne Konto'))));
+</script>
+</body>
+</html>

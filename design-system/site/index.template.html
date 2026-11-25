@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>madita.ai Design System</title>
+<meta name="description" content="Farben, Typografie, Abstände, Logos, Komponenten und Richtlinien für madita.ai.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="madita.ai Design System">
+<meta property="og:description" content="Farben, Typografie, Abstände, Logos, Komponenten und Richtlinien für madita.ai.">
+<meta property="og:url" content="https://svenzuehlke.github.io/madita-design-system/">
+<meta property="og:image" content="https://svenzuehlke.github.io/madita-design-system/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="madita.ai Design System">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://svenzuehlke.github.io/madita-design-system/og.png">
+<link rel="alternate" hreflang="de" href="https://svenzuehlke.github.io/madita-design-system/">
+<link rel="alternate" hreflang="en" href="https://svenzuehlke.github.io/madita-design-system/en/">
+<link rel="icon" href="assets/logos/madita-favicon-lime.svg" type="image/svg+xml">
+<link rel="stylesheet" href="{{FONTS}}">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="bundle.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="ds-skip" href="#inhalt">Zum Inhalt</a>
+<header class="ds-header" id="top">
+  <div class="ds-header__bar">
+    <a class="ds-header__logo" href="#top" aria-label="madita.ai Design System, nach oben">
+      <img src="assets/logos/madita-logo-grey.svg" alt="madita.ai" width="201" height="32">
+      <span>Design System</span>
+    </a>
+    <nav class="ds-header__nav" aria-label="Bereiche">
+      <a href="#farben">Farben</a>
+      <a href="#typografie">Typografie</a>
+      <a href="#raster">Raster</a>
+      <a href="#logo">Logo &amp; Icons</a>
+      <a href="#komponenten">Komponenten</a>
+      <a href="#richtlinien">Richtlinien</a>
+    </nav>
+    <div class="ds-header__end">
+      {{LANGSWITCH}}
+      <a class="md-btn md-btn--primary md-btn--nav" href="https://github.com/svenzuehlke/madita-design-system">Auf GitHub</a>
+    </div>
+  </div>
+</header>
+
+<main id="inhalt">
+  <section class="ds-hero">
+    <div class="ds-wrap ds-hero__grid">
+      <div class="ds-hero__text">
+        <p class="ds-pill">Design System 2027</p>
+        <h1 class="ds-hero__title">Farben, Formen und Bausteine für <mark class="ds-mark">madita.ai</mark></h1>
+        <p class="ds-hero__lead">Die gemeinsame Quelle für alle, die für madita.ai gestalten oder bauen: Tokens, Logos, Komponenten und die Regeln dahinter. Ändert sich hier etwas, ändert es sich überall.</p>
+        <div class="ds-hero__actions">
+          <a class="md-btn md-btn--primary" href="#komponenten">Komponenten ansehen</a>
+          <a class="md-btn md-btn--outline" href="tokens.json" download>tokens.json laden</a>
+        </div>
+      </div>
+      <div class="ds-hero__art ds-stage" aria-hidden="true">
+        <div class="ds-stage__video">
+          <video autoplay muted loop playsinline preload="auto" poster="assets/media/madita-knock-loop-v2-poster.webp">
+            <source src="assets/media/madita-knock-loop-v2.webm" type="video/webm">
+            <source src="assets/media/madita-knock-loop-v2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="ds-float ds-float--status"><span class="ds-float__dot"></span>Madita ist online</div>
+        <div class="ds-float ds-float--chip"><span>Interview abgeschlossen</span><b>22:57</b></div>
+        <div class="ds-float ds-float--score">
+          <div class="ds-float__head">Auswertung <span>Score 85</span></div>
+          <div class="ds-float__row"><span>Kommunikation</span><i style="--w:92%"></i></div>
+          <div class="ds-float__row"><span>Erfahrung</span><i style="--w:78%"></i></div>
+          <div class="ds-float__row"><span>Motivation</span><i style="--w:86%"></i></div>
+        </div>
+        <div class="ds-float ds-float--swatches"><i style="background:var(--indigo)"></i><i style="background:var(--lime)"></i><i style="background:var(--mint)"></i><i style="background:var(--sky-blue)"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-section" id="farben">
+    <div class="ds-wrap">
+      <header class="ds-section__head"><p class="ds-pill">Farben</p><h2 class="ds-h2">Indigo führt, Lime <mark class="ds-mark">markiert</mark></h2><p class="ds-lead">Klick auf eine Farbe kopiert den Hex-Wert. Semantische Tokens verweisen auf die Grundfarben.</p></header>
+      {{COLORS}}
+    </div>
+  </section>
+
+  <section class="ds-section" id="typografie">
+    <div class="ds-wrap">
+      <header class="ds-section__head"><p class="ds-pill">Typografie</p><h2 class="ds-h2">Plus Jakarta Sans <mark class="ds-mark">Bold</mark> und DM Sans</h2><p class="ds-lead">Alle Headlines in Bold 700 mit Laufweite 0. Die Größen sind das Desktop-Maximum, auf kleineren Bildschirmen skalieren sie mit.</p></header>
+      {{TYPE}}
+    </div>
+  </section>
+
+  <section class="ds-section" id="raster">
+    <div class="ds-wrap">
+      <header class="ds-section__head"><p class="ds-pill">Raster</p><h2 class="ds-h2">Alles im <mark class="ds-mark">4er-Raster</mark></h2><p class="ds-lead">Abstände, Radien, Größen und die zwei erlaubten Schatten.</p></header>
+      {{SCALES}}
+    </div>
+  </section>
+
+  <section class="ds-section" id="logo">
+    <div class="ds-wrap">
+      <header class="ds-section__head"><p class="ds-pill">Logo &amp; Icons</p><h2 class="ds-h2">Das <mark class="ds-mark">.ai</mark> ist immer indigo</h2><p class="ds-lead">Originaldateien zum Herunterladen. Nie umfärben, verzerren oder nachzeichnen.</p></header>
+      {{ASSETS}}
+    </div>
+  </section>
+
+  <section class="ds-section" id="komponenten">
+    <div class="ds-wrap">
+      <header class="ds-section__head"><p class="ds-pill">Komponenten</p><h2 class="ds-h2">{{COMPONENT_COUNT}} Bausteine, <mark class="ds-mark">live</mark> gerendert</h2><p class="ds-lead">Jede Vorschau läuft mit dem echten Bundle (<code>bundle.js</code>, <code>bundle.css</code>). Props stehen in <a class="ds-link" href="https://github.com/svenzuehlke/madita-design-system/blob/main/src/components/index.d.ts">index.d.ts</a>.</p></header>
+      {{COMPONENTS}}
+    </div>
+  </section>
+
+  <section class="ds-section" id="richtlinien">
+    <div class="ds-wrap">
+      <header class="ds-section__head"><p class="ds-pill">Richtlinien</p><h2 class="ds-h2">So setzt ihr das System <mark class="ds-mark">richtig</mark> ein</h2><p class="ds-lead">Tonalität, Farbe, Layout, Bewegung und die Qualitätsregeln vor jeder Veröffentlichung.</p></header>
+      {{GUIDELINES}}
+    </div>
+  </section>
+</main>
+
+<footer class="ds-footer">
+  <div class="ds-wrap ds-footer__inner">
+    <img src="assets/logos/madita-logo-white.svg" alt="madita.ai" width="176" height="28">
+    <p>Design System für madita.ai · HeyJobs GmbH · Quelle: Figma „madita.ai 2027“</p>
+    <p><a href="https://github.com/svenzuehlke/madita-design-system">Repository auf GitHub</a></p>
+  </div>
+</footer>
+
+<button class="ds-totop" type="button" aria-label="Nach oben"><svg viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z"/></svg></button>
+<div class="ds-toast" role="status" aria-live="polite"></div>
+<script src="site.js"></script>
+</body>
+</html>

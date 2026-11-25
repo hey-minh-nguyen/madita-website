@@ -1,0 +1,14 @@
+<!-- @dsCard group="Ergänzungen" height=200 -->
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><title>Toast – Vorschau</title></head>
+<body>
+<div id="root" class="md-stage" style="display:grid;gap:12px"></div>
+<script>
+  var M = window.Madita, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null,
+    h(M.Toast, { open: true, floating: false, tone: 'success', title: 'Interview gestartet', onClose: function () {} }, 'Prüfen Sie Ihr Postfach – der Link ist unterwegs.'),
+    h(M.Toast, { open: true, floating: false, tone: 'error', title: 'Das hat nicht geklappt', onClose: function () {} }, 'Bitte versuchen Sie es in einer Minute erneut.')));
+</script>
+</body>
+</html>

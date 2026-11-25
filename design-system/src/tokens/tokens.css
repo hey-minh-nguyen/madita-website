@@ -1,0 +1,107 @@
+/* madita.ai — generated from tokens.json */
+:root {
+  --indigo: #343dba;
+  --indigo-dark: #101665;
+  --indigo-20: #cfd6f0;
+  --indigo-10: #ecf0fa;
+  --grey: #1e1e1e;
+  --grey-40: #9397a9;
+  --grey-05: #edeef3;
+  --white: #ffffff;
+  --lime: #d4f59a;
+  --lime-20: #eeffd5;
+  --lime-10: #f7ffea;
+  --apple: #b2eda6;
+  --apple-20: #d4facc;
+  --apple-10: #eaffe5;
+  --mint: #85eccd;
+  --mint-20: #e1faf3;
+  --mint-10: #f3fdfa;
+  --turquoise: #7adeee;
+  --turquoise-20: #def7fb;
+  --turquoise-10: #f2fcfd;
+  --sky-blue: #95ccfb;
+  --sky-blue-20: #e7f2fd;
+  --sky-blue-10: #f4faff;
+  --success: #10b981;
+  --info: #3b82f6;
+  --error: #ef4444;
+  --warning: #fbbf24;
+  --orange: #f97316;
+  --success-tint: #ecfdf5;
+  --info-tint: #eff6ff;
+  --error-tint: #fef2f2;
+  --warning-tint: #fffbeb;
+  --orange-tint: #fff7ed;
+  --surface: var(--white);
+  --surface-subtle: var(--grey-05);
+  --surface-brand: var(--indigo);
+  --surface-brand-deep: var(--indigo-dark);
+  --surface-inverse: var(--grey);
+  --ink: var(--grey);
+  --ink-strong: var(--indigo-dark);
+  --ink-brand: var(--indigo);
+  --ink-on-dark: var(--white);
+  --ink-on-dark-muted: var(--indigo-20);
+  --ink-disabled: var(--grey-40);
+  --marker: var(--lime);
+  --line: var(--grey-05);
+  --line-strong: var(--grey);
+  --focus: var(--indigo);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-30: 120px;
+  --space-40: 160px;
+  --space-60: 240px;
+  --radius-marker: 3px;
+  --radius-xs: 4px;
+  --radius-sm: 5px;
+  --radius-md: 10px;
+  --radius-lg: 15px;
+  --radius-pill: 9999px;
+  --focus-ring: 0 0 0 2px #ffffff, 0 0 0 4px #343dba;
+  --shadow-overlay: 0 24px 48px -12px #1016653d;
+  --container: 1228px;
+  --container-wide: 1280px;
+  --measure-heading: 640px;
+  --measure-text: 520px;
+  --gutter: 24px;
+  --section-gap: 96px;
+  --control-height: 44px;
+  --control-height-icon: 44px;
+  --control-height-nav: 40px;
+  --control-height-xs: 28px;
+  --label-height: 32px;
+  --chip-height: 32px;
+  --control-padding-x: 20px;
+  --control-padding-y: 12px;
+  --icon-size: 18px;
+  --icon-gap: 8px;
+  --card-width: 264px;
+  --font-heading: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+}
+.display { font-family: var(--font-heading); font-size: 64px; line-height: 1.1; font-weight: 700; letter-spacing: 0em; }
+.h1 { font-family: var(--font-heading); font-size: 48px; line-height: 1.1; font-weight: 700; letter-spacing: 0em; }
+.h2 { font-family: var(--font-heading); font-size: 36px; line-height: 1.25; font-weight: 700; letter-spacing: 0em; }
+.h3 { font-family: var(--font-heading); font-size: 22px; line-height: 1.2; font-weight: 700; letter-spacing: 0em; }
+.stat { font-family: var(--font-heading); font-size: 40px; line-height: 1.2; font-weight: 700; letter-spacing: 0em; }
+.quote-large { font-family: var(--font-heading); font-size: 25px; line-height: 1.35; font-weight: 600; letter-spacing: 0em; font-style: italic; }
+.button { font-family: var(--font-heading); font-size: 13px; line-height: 1.3; font-weight: 700; letter-spacing: 0em; }
+.micro { font-family: var(--font-heading); font-size: 12px; line-height: 1.3; font-weight: 400; letter-spacing: 0em; }
+.title { font-family: var(--font-body); font-size: 20px; line-height: 1.4; font-weight: 700; }
+.body { font-family: var(--font-body); font-size: 15px; line-height: 1.7; font-weight: 400; }
+.body-strong { font-family: var(--font-body); font-size: 15px; line-height: 1.7; font-weight: 700; }
+.quote { font-family: var(--font-body); font-size: 15px; line-height: 1.7; font-weight: 400; font-style: italic; }
+.nav { font-family: var(--font-body); font-size: 13px; line-height: 1.3; font-weight: 500; }
+.caption { font-family: var(--font-body); font-size: 12px; line-height: 1.6; font-weight: 400; }

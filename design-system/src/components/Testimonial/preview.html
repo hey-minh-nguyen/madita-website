@@ -1,0 +1,14 @@
+<!-- @dsCard group="Inhalt" height=190 -->
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><title>Testimonial – Vorschau</title></head>
+<body>
+<div id="root" class="md-row" style="align-items:flex-start;gap:40px"></div>
+<script>
+  var M = window.Madita, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null,
+    h(M.Testimonial, { quote: '„Madita ist die Plattform, die uns am meisten begeistert hat. Sie repräsentiert die größte Innovation im Vergleich zu anderen Demos, die wir gesehen haben.“', author: 'Name', role: 'Head of Talent Acquisition' }),
+    h(M.Testimonial, { quote: '„Der größte Hebel ist die Automatisierung des Interviews, wo die meiste Recruiting-Zeit investiert wird und der größte Drop-off passiert.“', author: 'Name', role: 'Recruiting Lead' })));
+</script>
+</body>
+</html>

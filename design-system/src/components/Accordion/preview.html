@@ -1,0 +1,15 @@
+<!-- @dsCard group="Ergänzungen" height=300 -->
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><title>Accordion – Vorschau</title></head>
+<body>
+<div id="root" class="md-stage"></div>
+<script>
+  var M = window.Madita, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(M.Accordion, { defaultOpen: 0, items: [
+    { title: 'Ist Madita DSGVO-konform?', content: 'Ja. Madita wird in Deutschland gebaut und in Frankfurt gehostet. AVV, TOMs und Unterlagen für den Betriebsrat liegen bereit.' },
+    { title: 'In welchen Sprachen führt Madita Interviews?', content: 'In über 90 Sprachen – sogar Schweizerdeutsch.' },
+    { title: 'Wie schnell sind wir live?', content: 'In Tagen, nicht in Quartalen.' } ] }));
+</script>
+</body>
+</html>
