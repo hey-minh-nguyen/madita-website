@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>madita.ai Startseite v1 aus Figma</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="assets/media/851c202e204f4aefb85fec09531b87db.png">
+<style>x-dc{display:none}</style>
+<script src="assets/js/preact.min.js"></script>
+<script src="assets/js/dc-lite.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap">
+<style>
+/* Madita Design System v1: Tokens */
+:root{--indigo:#343DBA;--indigo-hover:#2A3298;--indigo-dark:#101665;--indigo-tint:#CFD6F0;--indigo-subtle:#ECF0FA;--grey:#1E1E1E;--grey-40:#9397A9;--grey-05:#EDEEF3;--white:#FFFFFF;--lime:#D4F59A;--lime-tint:#EEFFD5;--apple:#B2EDA6;--font-display:"Plus Jakarta Sans",ui-sans-serif,system-ui,sans-serif;--font-sans:"DM Sans",ui-sans-serif,system-ui,sans-serif;--radius-xs:3px;--radius-sm:5px;--radius-md:10px;--radius-lg:15px;--radius-xl:20px;--radius-full:9999px;--control-sm:36px;--control-md:44px;--control-lg:52px;--shadow-hover:0 8px 20px rgba(16,22,101,.18);--shadow-float:0 24px 60px rgba(16,22,101,.18)}
+body{margin:0;background:var(--white);color:var(--grey);font-family:var(--font-sans)}
+a{color:var(--indigo)}a:hover{color:var(--indigo-dark)}
+.pjs{font-family:var(--font-display);font-weight:800;letter-spacing:-0.02em;margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding-left:20px;padding-right:20px;box-sizing:content-box}
+/* Typo-Skala */
+.t-display{font-family:var(--font-display);font-weight:800;letter-spacing:-0.02em;font-size:80px;line-height:1.1}
+.t-h1{font-family:var(--font-display);font-weight:800;letter-spacing:-0.02em;font-size:56px;line-height:1.1}
+.t-h2{font-family:var(--font-display);font-weight:800;letter-spacing:-0.02em;font-size:40px;line-height:1.25}
+.t-h3{font-family:var(--font-display);font-weight:800;letter-spacing:-0.02em;font-size:24px;line-height:1.25}
+.t-title{font-family:var(--font-sans);font-weight:700;font-size:20px;line-height:1.7}
+.body15,.t-body{font-size:15px;line-height:1.7;margin:0}
+.t-body-strong{font-size:15px;line-height:1.7;font-weight:700}
+.t-caption{font-size:12px;line-height:1.6}
+@media (max-width:900px){.t-display{font-size:44px}.t-h1{font-size:36px}.t-h2{font-size:30px}}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:var(--control-md);padding:0 22px;border-radius:var(--radius-full);font-family:var(--font-display);font-weight:700;font-size:13px;line-height:1.25;text-decoration:none;box-sizing:border-box;border:1px solid transparent;cursor:pointer;white-space:nowrap;transition:transform .2s ease, background-color .2s ease, color .2s ease, box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+.btn:focus-visible{outline:2px solid var(--indigo);outline-offset:2px}
+.btn-sm{height:var(--control-sm);padding:0 20px;font-size:12px}
+.btn-lg{height:var(--control-lg);padding:0 28px;font-size:15px}
+@media (max-width:900px){.btn-sm{height:var(--control-md)}}
+.btn-indigo{background:var(--indigo);color:var(--white)}.btn-indigo:hover{color:var(--white);background:var(--indigo-hover)}
+.btn-ghost{background:var(--white);color:var(--grey);border-color:var(--grey)}.btn-ghost:hover{color:var(--white);background:var(--grey)}
+.btn-dark{background:var(--grey);color:var(--white)}.btn-dark:hover{color:var(--white);background:var(--indigo)}
+.btn-on-indigo{background:var(--white);color:var(--grey)}.btn-on-indigo:hover{color:var(--grey);background:var(--indigo-subtle)}
+.btn-lime{background:var(--lime);color:var(--grey)}.btn-lime:hover{color:var(--grey);background:var(--lime-tint)}
+.btn-lime:focus-visible,.btn-on-indigo:focus-visible,.on-dark .btn:focus-visible{outline-color:var(--white)}
+/* Hero-Video: wächst beim Scrollen auf Vollformat */
+.vx-track{position:relative;height:calc(var(--vxh,900px) * 2.3)}
+.vx-stage{position:sticky;top:0;height:var(--vxh,900px);display:flex;justify-content:center;align-items:flex-start}
+.vx-frame{position:relative;margin-top:72px;width:min(588px,100%);height:331px;border-radius:var(--radius-lg);overflow:hidden;background:var(--grey-05);box-shadow:var(--shadow-float);will-change:width,height}
+.vx-track.vx-static{height:auto}.vx-track.vx-static .vx-stage{position:static;height:auto}.vx-track.vx-static .vx-frame{aspect-ratio:588/331;height:auto;margin-top:53px}
+/* Navigation: volle Leiste oben, schwebende Pill beim Scrollen (Vorlage: Annnimate Floating Navbar) */
+.nb{--nb-ease:cubic-bezier(.3,.9,.1,1);--nb-dur:.42s;position:sticky;top:0;z-index:30;height:95px;pointer-events:none;transition:transform .42s var(--nb-ease)}
+.nb.is-hidden{transform:translateY(-110%);transition:transform .36s cubic-bezier(.7,0,.16,1)}
+.nb.is-hidden:focus-within{transform:none}
+.nb-bg{position:absolute;left:0;right:0;top:0;height:127px;background:rgba(30,30,30,0);clip-path:inset(0 0 32px 0 round 0);-webkit-backdrop-filter:blur(0) saturate(1);backdrop-filter:blur(0) saturate(1);transition:clip-path var(--nb-dur) var(--nb-ease),background-color var(--nb-dur) var(--nb-ease),backdrop-filter var(--nb-dur) var(--nb-ease),-webkit-backdrop-filter var(--nb-dur) var(--nb-ease)}
+.nb.is-docked .nb-bg{background:rgba(30,30,30,.82);-webkit-backdrop-filter:blur(14px) saturate(1.6);backdrop-filter:blur(14px) saturate(1.6)}
+.nb-row{position:relative;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;height:100%;transition:transform calc(var(--nb-dur) * .82) var(--nb-ease) .04s}
+.nb-links{grid-column:2;display:flex;align-items:center;gap:32px}
+.nb-right{grid-column:3;display:flex;justify-content:flex-end;align-items:center;gap:24px}
+.nb a{pointer-events:auto}
+.nb [data-nb-item]{transition:transform var(--nb-dur) var(--nb-ease) .04s,color .3s ease,background-color .3s ease,box-shadow .2s ease}
+.nb-logo{grid-column:1;justify-self:start;display:inline-flex;min-height:44px;align-items:center}
+.nb-logo-clip{position:relative;display:block;width:166px;overflow:hidden;transition:width calc(var(--nb-dur) * .74) var(--nb-ease)}
+.nb-logo-img{width:166px;max-width:none;height:auto;display:block;transition:opacity .25s ease}
+.nb-logo-white{position:absolute;left:0;top:0;opacity:0}
+.nb-login{transition:opacity .2s ease}
+.nb .navlink{position:relative}
+.nb .nb-links .navlink::after{content:"";position:absolute;left:0;right:0;bottom:12px;height:1.5px;border-radius:2px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .25s var(--nb-ease)}
+.nb .nb-links .navlink:hover::after{transform:scaleX(1)}
+/* Logo und Button laufen exakt mit den Pill-Kanten, sonst ragen sie beim Andocken heraus */
+.nb [data-nb-logo],.nb [data-nb-cta]{transition-delay:0s,0s,0s,0s}
+.nb.is-docked .navlink{color:var(--white)}
+.nb.is-docked .navlink:hover{color:var(--lime)}
+.nb.is-docked .nb-logo-clip{width:22px}
+.nb.is-docked .nb-logo-img{opacity:0}
+.nb.is-docked .nb-logo-white{opacity:1}
+.nb.is-docked .nb-login{opacity:0;pointer-events:none}
+.nb.is-docked .nb-cta{background:var(--lime);color:var(--grey)}
+.nb.is-docked .nb-cta:hover{background:var(--lime-tint);color:var(--grey)}
+.nb.is-docked .nb-cta:focus-visible,.nb.is-docked .navlink:focus-visible{outline:2px solid var(--white);outline-offset:2px}
+.nb.is-docked .btn:hover{transform:var(--nb-t) !important}
+/* Nur zum Messen der Pill-Anordnung, wird nie gezeichnet */
+.nb.nb-measure .nb-row{display:flex;justify-content:center;gap:0}
+.nb.nb-measure .nb-logo{width:22px;overflow:hidden;margin-right:20px}
+.nb.nb-measure .nb-links{gap:20px;margin-right:12px}
+.nb.nb-measure .nb-right{flex:none}
+.nb.nb-measure .nb-login{display:none}
+@media (max-width:900px){.nb.nb-measure .nb-links{display:none}}
+/* 3 Schritte: Modul bleibt stehen, Scrollen schaltet Schritt 1 → 2 → 3 */
+.st-track{position:relative;width:100%;margin-top:80px;height:calc(535px + var(--st-run,0px))}
+.st-stage{position:sticky;top:var(--st-top,120px)}
+.st-track.st-static{height:auto}.st-track.st-static .st-stage{position:static}
+.st-grid{display:grid;grid-template-columns:minmax(0,1fr) 428px minmax(0,1fr);column-gap:48px;align-items:stretch;width:100%}
+.st-tabs{position:relative;align-self:start}
+.st-tablist{position:relative;padding-left:32px;display:flex;flex-direction:column;gap:32px}
+.st-rail{position:absolute;left:0;top:0;bottom:0;width:8px;border-radius:var(--radius-full);background:var(--grey-05)}
+.st-bar{position:absolute;left:0;top:0;width:8px;height:44px;border-radius:var(--radius-full);background:var(--indigo);transition:top .55s cubic-bezier(.2,.8,.2,1), height .35s cubic-bezier(.2,.8,.2,1)}
+.st-card{position:relative;width:428px;max-width:100%;height:535px}
+.st-text{display:flex;flex-direction:column;justify-content:flex-end;max-width:353px;justify-self:end;width:100%}
+@media (max-width:900px){.st-grid{grid-template-columns:minmax(0,1fr);row-gap:32px}.st-card{justify-self:center}.st-text{justify-self:start}}
+/* Stimmen: Diagonal-Galerie */
+.q-wrap{position:relative;width:100%;height:calc(var(--qsh,820px) + var(--q-run,0px));background:var(--white);--q-margin:40px;--q-gap:24px;--q-h:min(calc(var(--qsh,820px) * .62), 560px);--q-w:calc(var(--q-h) * .75);--q-top:calc(var(--qsh,820px) - var(--q-margin) - var(--q-h))}
+.q-stage{position:sticky;top:0;height:var(--qsh,820px);overflow:hidden}
+.q-wrap.q-static .q-stage{position:relative}
+.q-head{position:absolute;left:var(--q-margin);right:var(--q-margin);text-align:center;bottom:calc(var(--qsh,820px) - var(--q-top) + var(--q-gap) * 1.5);margin:0;font-size:56px;line-height:1.05}
+.q-head>span{display:block}
+.q-dim{color:var(--indigo)}
+.q-card{position:absolute;left:calc(50% - var(--q-w) / 2);top:var(--q-top);width:var(--q-w);height:var(--q-h);margin:0;border-radius:var(--radius-xl);overflow:hidden;box-sizing:border-box;padding:calc(var(--q-w) * .08);display:flex;flex-direction:column;justify-content:space-between;color:var(--indigo-dark);will-change:transform;transform-origin:50% 50%;transition:transform .9s cubic-bezier(.7,0,.16,1)}
+.q-card.q-fast{transition:transform .6s cubic-bezier(.3,.9,.1,1)}
+.q-lime{background:var(--lime)}.q-mint{background:#85ECCD}.q-sky{background:#95CCFB}.q-turquoise{background:#7ADEEE}.q-apple{background:var(--apple)}
+.q-indigo{background:var(--indigo);color:var(--white)}
+.q-photo{background:var(--grey-05);justify-content:flex-end;padding:calc(var(--q-w) * .05)}
+.q-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.q-chip{position:relative;align-self:flex-start;display:inline-flex;align-items:center;height:28px;padding:0 14px;border-radius:var(--radius-full);background:rgba(255,255,255,.7);font-family:var(--font-sans);font-weight:500;font-size:12px;color:var(--indigo-dark)}
+.q-indigo .q-chip{background:rgba(255,255,255,.16);color:var(--white)}
+.q-photo .q-chip{position:absolute;top:calc(var(--q-w) * .05);left:calc(var(--q-w) * .05);background:var(--white)}
+.q-quote{position:relative;margin:0;font-family:var(--font-display);font-weight:800;letter-spacing:-0.02em;font-size:calc(var(--q-w) * .066);line-height:1.18;text-wrap:balance}
+.q-photo .q-quote{background:var(--white);color:var(--indigo-dark);border-radius:var(--radius-md);padding:calc(var(--q-w) * .05);font-size:calc(var(--q-w) * .056)}
+.q-copy{position:absolute;left:calc(50% + var(--q-w) / 2 + var(--q-gap) * 1.5);top:var(--q-top);width:min(300px, calc(50% - var(--q-w) / 2 - var(--q-margin) - var(--q-gap) * 1.5))}
+.q-title,.q-text{margin:0;overflow:clip;padding-bottom:.16em;margin-bottom:-.16em}
+.q-title{font-family:var(--font-display);font-weight:800;font-size:24px;line-height:1.25;letter-spacing:-0.02em}
+.q-text{margin-top:10px;font-size:15px;line-height:1.7;color:var(--grey)}
+.q-line{display:block;transition:transform .5s cubic-bezier(.3,.9,.1,1)}
+.q-count{position:absolute;left:max(var(--q-margin), calc((100% - 1200px) / 2));bottom:var(--q-margin);display:flex;align-items:baseline;gap:10px;margin:0}
+.q-num{display:inline-flex;font-family:var(--font-display);font-weight:800;font-size:80px;letter-spacing:-0.04em;line-height:1;margin-bottom:-.12em;color:var(--indigo)}
+.q-digit{display:inline-block;height:1em;overflow:clip}
+.q-digit-col{display:block;transition:transform .9s cubic-bezier(.7,0,.16,1)}
+.q-digit-col>span{display:block;height:1em}
+.q-total{font-size:15px;color:var(--grey)}
+@media (max-width:900px){.q-wrap{--q-h:min(calc(var(--qsh,820px) * .46), 76vw);--q-top:calc(var(--qsh,820px) / 2 - var(--q-h) / 2 + 20px);--q-margin:20px}
+.q-copy{left:var(--q-margin);right:var(--q-margin);top:calc(var(--q-top) + var(--q-h) + 20px);width:auto}
+.q-count{display:none}
+.q-head{top:96px;bottom:auto;font-size:30px}}
+/* Eyebrow */
+.eyebrow{display:inline-flex;align-items:center;height:var(--control-md);padding:0 22px;border-radius:var(--radius-full);background:var(--indigo-subtle);color:var(--indigo);font-family:var(--font-display);font-weight:700;font-size:13px;line-height:1.25;box-sizing:border-box}
+.eyebrow-sm{height:28px;padding:0 16px;font-family:var(--font-sans);font-weight:500}
+.eyebrow-white{background:var(--white);color:var(--indigo-dark)}
+.eyebrow-lime{background:var(--lime);color:var(--grey)}
+.navlink{color:#1E1E1E;text-decoration:none;font-size:12px;font-weight:500;min-height:44px;display:inline-flex;align-items:center}.navlink:hover{color:#343DBA}
+.hl{background-image:linear-gradient(var(--lime),var(--lime));background-repeat:no-repeat;background-position:0 0;background-size:0% 100%;border-radius:var(--radius-xs);padding:0 6px;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size 1s cubic-bezier(.2,.8,.2,1) .35s}
+.hl-white{background-image:linear-gradient(var(--white),var(--white))}
+.in .hl{background-size:100% 100%}
+[data-reveal] .rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1)}
+[data-reveal].in .rv{opacity:1;transform:none}
+.zoom-in{transform:scale(1.06);transition:transform 1.6s cubic-bezier(.2,.8,.2,1)}
+.in .zoom-in{transform:scale(1)}
+.rise{display:block;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+.pop{animation:pop 1s cubic-bezier(.2,.8,.2,1) .45s both}
+@keyframes pop{from{opacity:0;transform:translateY(30px) scale(.96)}to{opacity:1;transform:none}}
+.layer{position:absolute;inset:0;border-radius:10px;overflow:hidden;transition:opacity .6s ease, transform .7s cubic-bezier(.2,.8,.2,1)}
+.tab{display:block;background:none;border:0;padding:0;text-align:left;cursor:pointer;font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:24px;line-height:1.25;letter-spacing:-0.02em;color:#1E1E1E;min-height:44px;transition:opacity .3s ease}
+.vt{transition:top .55s cubic-bezier(.2,.8,.2,1)}
+.stat{position:absolute;left:48px;right:48px;top:50%;margin:0;font-family:var(--font-sans);font-size:24px;font-weight:700;line-height:1.25;color:var(--indigo-dark);text-wrap:balance;transition:transform .7s cubic-bezier(.2,.8,.2,1), opacity .5s ease}
+.stat-dot{display:block;height:6px;border-radius:var(--radius-full);background:var(--indigo);transition:width .4s cubic-bezier(.2,.8,.2,1), opacity .4s ease}
+@media (max-width:900px){.stat{left:24px;right:24px;font-size:20px}}
+.word{display:inline-block;margin-right:.26em;transition:opacity .35s ease, color .35s ease}
+.footlink{display:block;color:#1E1E1E;text-decoration:none;font-size:12px;line-height:1.6}.footlink:hover{color:#343DBA}
+.ctrl{width:44px;height:44px;border:0;background:none;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;border-radius:100px}
+.ctrl:hover{background:rgba(255,255,255,.08)}
+@media (max-width:900px){.hide-sm{display:none}.stack-sm{flex-direction:column !important;align-items:stretch !important}}
+@media (prefers-reduced-motion:reduce){
+.btn{transition:none}.btn:hover{transform:none}
+.rise,.pop{animation:none}
+[data-reveal] .rv{opacity:1;transform:none;transition:none}
+.hl{background-size:100% 100%;transition:none}
+.zoom-in{transform:none;transition:none}
+.layer,.vt,.stat,.word,.st-bar,.q-card,.q-digit-col,.q-line{transition:none}
+.nb,.nb.is-hidden,.nb-row,.nb [data-nb-item],.nb-logo-img,.nb-logo-clip{transition:none}
+}
+</style>
+</helmet>
+<div style="width:100%;min-width:0;overflow-x:clip">
+
+<!-- NAV: schwebt beim Scrollen als Pill ein -->
+<header class="nb" data-nb="1">
+<div class="nb-bg" data-nb-bg="1" aria-hidden="true"></div>
+<div class="wrap nb-row" data-nb-row="1">
+<a class="nb-logo" data-nb-item="1" data-nb-logo="1" href="#top" aria-label="madita.ai Startseite"><span class="nb-logo-clip"><img class="nb-logo-img" src="assets/media/b3177626d75662a62d4a9796c6596dc8.png" alt="madita.ai"><img class="nb-logo-img nb-logo-white" src="assets/media/574ec0f14419e58f225249afb168944d.png" alt="" aria-hidden="true"></span></a>
+<nav aria-label="Hauptnavigation" class="nb-links hide-sm">
+<a class="navlink" data-nb-item="1" href="produkt.html">Produkt</a>
+<a class="navlink" data-nb-item="1" href="#branchen">Branchen</a>
+<a class="navlink" data-nb-item="1" href="preise.html">Preise</a>
+<a class="navlink" data-nb-item="1" href="compliance.html">Compliance</a>
+<a class="navlink" data-nb-item="1" href="#ueber-uns">Über uns</a>
+</nav>
+<div class="nb-right">
+<a class="navlink nb-login hide-sm" href="#anmelden">Anmelden</a>
+<a class="btn btn-dark btn-sm nb-cta" data-nb-item="1" data-nb-cta="1" href="kontakt.html">Kostenlos ausprobieren</a>
+</div>
+</div>
+</header>
+
+<!-- HERO -->
+<section id="top" style="padding-top:30px;padding-bottom:0;text-align:center">
+<div class="wrap" style="display:flex;flex-direction:column;align-items:center">
+<h1 class="pjs t-display" style="margin:0">
+<span class="rise" style="animation-delay:.05s">Hi, ich bin Madita,</span>
+<span class="rise" style="animation-delay:.2s;color:#343DBA">Ihre KI-Recruiterin.</span>
+</h1>
+<p class="body15 rise" style="max-width:588px;margin-top:40px;animation-delay:.35s">Ich führe KI-Interviews in menschlicher Qualität. DSGVO und EU-AI-Act-konform und in über 90 Sprachen.</p>
+</div>
+</section>
+<div class="vx-track" data-vx-track="1">
+<div class="vx-stage">
+<div class="vx-frame pop" data-vx-frame="1">
+<video data-v1-video="1" src="assets/media/0e6dcbc92f621153e7b949f0f913ce18.mp4" poster="assets/media/91e7dad5dad25e636b555dc9e01df617.jpg" autoplay="" loop="" muted="" playsinline="" preload="metadata" aria-label="Pitch-Film: Madita stellt sich vor" style="width:100%;height:100%;object-fit:cover;display:block"></video>
+<button type="button" onClick="{{toggleSound}}" aria-label="{{soundLabel}}" style="position:absolute;right:10px;bottom:10px;width:44px;height:44px;border-radius:15px;border:0;cursor:pointer;background:rgba(197,197,199,.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center">
+<sc-if value="{{muted}}" hint-placeholder-val="{{ true }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="#1E1E1E"></path><path d="M17 9l4 6M21 9l-4 6" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round"></path></svg></sc-if>
+<sc-if value="{{unmuted}}" hint-placeholder-val="{{ false }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="#1E1E1E"></path><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round"></path></svg></sc-if>
+</button>
+</div>
+</div>
+</div>
+
+<!-- WER IST MADITA -->
+<section data-reveal="1" id="produkt" style="background:#343DBA;border-radius:20px;padding-top:90px;padding-bottom:95px;color:#FFFFFF">
+<div class="wrap" style="display:flex;flex-direction:column;align-items:center;text-align:center">
+<h2 class="pjs t-h2 rv" style="color:var(--white)">Madita übernimmt die Fleißarbeit.<br>Ihr Team <span class="hl" style="color:#101665">die Entscheidungen.</span></h2>
+<p class="body15 rv" style="max-width:792px;margin-top:40px;color:#FFFFFF;transition-delay:.1s">Madita ist eine KI-Recruiterin, die als virtuelles Teammitglied in bestehende Recruiting-Teams integriert wird. Sie führt strukturierte Interviews, bewertet Kandidat:innen anhand rollenspezifischer Kriterien und gibt Recruiter:innen eine fundierte Entscheidungsgrundlage. Rund um die Uhr, in über 90 Sprachen, ab dem Moment der Bewerbung.</p>
+<div class="rv stack-sm" style="display:flex;gap:24px;margin-top:72px;width:100%;transition-delay:.2s">
+<div style="flex:0 0 384px;max-width:100%;height:278px;border-radius:10px;overflow:hidden"><img class="zoom-in" src="assets/media/69c30bab70fcd83bbbba8b075e5f824c.jpg" alt="Madita präsentiert im Team-Meeting" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+<div aria-live="polite" style="flex:1 1 400px;min-width:0;height:278px;background:var(--white);border-radius:var(--radius-md);position:relative;overflow:hidden;text-align:center">
+<sc-for list="{{stats}}" as="s" hint-placeholder-count="3"><p class="stat" style="{{s.style}}">{{s.text}}</p></sc-for>
+<div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:24px;display:flex;justify-content:center;gap:6px"><sc-for list="{{statDots}}" as="d" hint-placeholder-count="3"><span class="stat-dot" style="{{d.style}}"></span></sc-for></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 3 SCHRITTE -->
+<section data-reveal="1" id="so-funktionierts" style="padding-top:40px;padding-bottom:87px">
+<div class="wrap" style="display:flex;flex-direction:column;align-items:center">
+<span class="eyebrow rv">So funktioniert's</span>
+<h2 class="pjs t-h2 rv" style="margin-top:38px;text-align:center;transition-delay:.08s">In <span class="hl">drei Schritten</span> zum Interview</h2>
+<div class="st-track" data-st-track="1">
+<div class="st-stage" data-st-stage="1">
+<div class="rv st-grid" style="transition-delay:.15s">
+<!-- tabs -->
+<div class="st-tabs">
+<div role="tablist" aria-label="Schritte" class="st-tablist" data-st-tablist="1">
+<span aria-hidden="true" class="st-rail"></span>
+<span aria-hidden="true" class="st-bar" data-st-bar="1"></span>
+<sc-for list="{{tabs}}" as="t" hint-placeholder-count="3"><button type="button" role="tab" class="tab" aria-selected="{{t.on}}" onClick="{{t.pick}}" style="{{t.style}}">{{t.label}}</button></sc-for>
+</div>
+</div>
+<!-- card -->
+<div class="st-card">
+<div class="layer" style="{{l0}}"><img src="assets/media/277c53123fe3cece621774ca7d9347a6.jpg" alt="Madita im Briefing mit dem Recruiting-Team" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+<div class="layer" style="{{l1}};background:#101665">
+<svg viewBox="0 0 352 123" width="352" height="123" aria-hidden="true" style="position:absolute;left:37px;top:98px;overflow:visible">
+<defs><filter id="glow1" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="2.2" result="b"></feGaussianBlur><feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter></defs>
+<g filter="url(#glow1)" fill="none" stroke-linecap="round">
+<sc-for list="{{wavesS}}" as="w" hint-placeholder-count="5"><path d="{{w.d0}}" stroke="{{w.c}}" stroke-width="{{w.sw}}" opacity="{{w.op}}"><animate attributeName="d" dur="{{w.dur}}" repeatCount="indefinite" values="{{w.vals}}"></animate></path></sc-for>
+</g>
+</svg>
+<p class="pjs t-h3" style="position:absolute;left:37px;right:28px;top:300px;color:#FFFFFF">
+<sc-for list="{{words}}" as="w" hint-placeholder-count="12"><span class="word" style="{{w.style}}">{{w.t}}</span></sc-for>
+</p>
+<div style="position:absolute;left:0;right:0;bottom:30px;display:flex;justify-content:center;align-items:center;gap:6px">
+<button type="button" class="ctrl" onClick="{{prevStep}}" aria-label="Vorheriger Schritt"><svg width="17" height="16" viewBox="0 0 17 16" aria-hidden="true"><path d="M3 2v12" stroke="#FFFFFF" stroke-width="2"></path><path d="M15 2 5 8l10 6z" fill="#FFFFFF"></path></svg></button>
+<button type="button" onClick="{{playVoice}}" aria-label="{{voiceLabel}}" aria-pressed="{{voicePlaying}}" style="width:44px;height:44px;border-radius:100px;border:0;background:var(--lime);cursor:pointer;display:flex;align-items:center;justify-content:center">
+<sc-if value="{{voicePlaying}}" hint-placeholder-val="{{ false }}"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="4" width="4.5" height="16" rx="1.5" fill="#101665"></rect><rect x="13.5" y="4" width="4.5" height="16" rx="1.5" fill="#101665"></rect></svg></sc-if>
+<sc-if value="{{voiceIdle}}" hint-placeholder-val="{{ true }}"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l14-8z" fill="#101665"></path></svg></sc-if>
+</button>
+<button type="button" class="ctrl" onClick="{{nextStep}}" aria-label="Nächster Schritt"><svg width="17" height="16" viewBox="0 0 17 16" aria-hidden="true"><path d="M14 2v12" stroke="#FFFFFF" stroke-width="2"></path><path d="M2 2l10 6-10 6z" fill="#FFFFFF"></path></svg></button>
+</div>
+</div>
+<div class="layer" style="{{l2}}"><img src="assets/media/add73a79e0ed38e1fe96cd5e1ca463c1.jpg" alt="Madita Dashboard mit Auswertung einer Kandidatin" style="{{dashStyle}}"></div>
+</div>
+<!-- right text -->
+<div aria-live="polite" class="st-text">
+<div style="{{textStyle}}">
+<h3 class="pjs t-h3">{{stepTitle}}</h3>
+<p class="body15" style="margin-top:30px">{{stepDesc}}</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- INTERVIEW -->
+<section data-reveal="1" id="test-interview" style="padding-top:24px;padding-bottom:65px">
+<div class="wrap" style="display:flex;flex-direction:column;align-items:center;text-align:center">
+<span class="eyebrow rv">Selbst ausprobieren</span>
+<h2 class="pjs t-h2 rv" style="margin-top:32px;transition-delay:.08s">Erleben Sie ein <span class="hl">Madita-Interview</span></h2>
+<p class="body15 rv" style="max-width:792px;margin-top:32px;transition-delay:.12s">Versetzen Sie sich in die Lage einer Kandidat:in und führen Sie hier direkt ein echtes Erstinterview mit Madita – ohne Konto, nur mit Ihrer Arbeits-E-Mail. Genau diese Erfahrung machen später Ihre Bewerber:innen.</p>
+<div class="rv stack-sm" style="display:flex;width:100%;margin-top:64px;text-align:left;border-radius:var(--radius-xl);overflow:hidden;transition-delay:.18s">
+<div class="on-dark" style="flex:1 1 640px;min-width:0;background:var(--grey);padding:40px 48px;box-sizing:border-box;display:flex;flex-direction:column;gap:0">
+<span class="eyebrow eyebrow-sm eyebrow-lime" style="align-self:flex-start">Selbst ausprobieren · ohne Konto</span>
+<h3 class="pjs t-h2" style="color:var(--white);max-width:431px;margin-top:24px">Erleben Sie ein Interview mit Madita</h3>
+<p class="body15" style="color:var(--white);max-width:534px;margin-top:16px">Versetzen Sie sich in die Lage einer Kandidat:in. Genau diese Erfahrung machen später Ihre Bewerber:innen. Die Auswertung kommt per E-Mail.</p>
+<svg viewBox="0 0 560 196" aria-hidden="true" style="width:100%;max-width:340px;height:auto;margin-top:4px;overflow:visible">
+<defs><filter id="glow2" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="2.6" result="b"></feGaussianBlur><feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter></defs>
+<g filter="url(#glow2)" fill="none" stroke-linecap="round">
+<sc-for list="{{wavesL}}" as="w" hint-placeholder-count="5"><path d="{{w.d0}}" stroke="{{w.c}}" stroke-width="{{w.sw}}" opacity="{{w.op}}"><animate attributeName="d" dur="{{w.dur}}" repeatCount="indefinite" values="{{w.vals}}"></animate></path></sc-for>
+</g>
+</svg>
+<form onSubmit="{{noop}}" style="display:flex;flex-direction:column;gap:12px;margin-top:8px">
+<label for="v1-mail" class="t-body-strong" style="color:var(--white)">Firmen-E-Mail-Adresse</label>
+<div style="display:flex;flex-wrap:wrap;gap:19px">
+<input id="v1-mail" type="email" placeholder="name@firma.de" autocomplete="email" style="flex:0 1 385px;min-width:0;height:var(--control-md);border-radius:var(--radius-full);border:0;padding:0 16px;font-family:inherit;font-size:15px;font-weight:700;color:#1E1E1E;background:#FFFFFF;box-sizing:border-box">
+<button type="submit" class="btn btn-lime">Interview starten</button>
+</div>
+<label style="display:flex;align-items:center;gap:9px;color:#FFFFFF;font-size:12px;min-height:32px;cursor:pointer"><input type="checkbox" style="width:16px;height:16px;margin:0;accent-color:#343DBA">Ich möchte gelegentlich E-Mails mit Produkttipps und Updates erhalten</label>
+</form>
+</div>
+<div style="flex:0 1 520px;min-width:0;min-height:320px;overflow:hidden"><img class="zoom-in" src="assets/media/2afe089bd983869edef9f2bdf639c6b6.jpg" alt="Madita lädt zum Interview ein" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+</div>
+</div>
+</section>
+
+<!-- VORTEILE -->
+<section data-reveal="1" id="vorteile" style="padding-top:54px;padding-bottom:80px">
+<div class="wrap" style="display:flex;flex-direction:column;align-items:center">
+<span class="eyebrow rv">Warum Madita</span>
+<h2 class="pjs t-h2 rv" style="margin-top:44px;text-align:center;transition-delay:.08s">Die Vorteile <span class="hl">auf einen Blick</span></h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:58px 45px;margin-top:112px;width:100%;max-width:1290px">
+<sc-for list="{{benefits}}" as="b" hint-placeholder-count="6">
+<div class="rv" style="{{b.delay}}">
+<img src="{{b.icon}}" alt="" style="width:21px;height:auto;display:block">
+<h3 class="t-title" style="margin:16px 0 0">{{b.title}}</h3>
+<p class="body15" style="margin-top:26px;max-width:400px">{{b.text}}</p>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- STIMMEN: Diagonal-Galerie, Scrollen schiebt die Zitat-Karten durch (Vorlage: Annnimate Diagonal Gallery) -->
+<section id="stimmen" class="q-wrap" data-q-wrap="1" aria-roledescription="Zitate" aria-label="Stimmen zu Madita">
+<div class="q-stage" data-q-stage="1">
+<h2 class="pjs q-head"><span>Was Recruiter:innen</span><span class="q-dim">und Kandidat:innen sagen.</span></h2>
+<div class="q-cards">
+<sc-for list="{{quotes}}" as="q" hint-placeholder-count="8"><figure class="q-card {{q.cls}}" data-q-card="1" data-title="{{q.who}}" data-text="{{q.topic}}">
+<sc-if value="{{q.photo}}" hint-placeholder-val="{{ false }}"><img class="q-img" src="{{q.img}}" alt="{{q.alt}}"></sc-if>
+<span class="q-chip">{{q.who}}</span>
+<blockquote class="q-quote">{{q.quote}}</blockquote>
+</figure></sc-for>
+</div>
+<div class="q-copy" aria-live="polite">
+<p class="q-title"><span class="q-line" data-q-title="1"></span></p>
+<p class="q-text"><span class="q-line" data-q-text="1"></span></p>
+</div>
+<p class="q-count" aria-hidden="true"><span class="q-num" data-q-num="1"></span><span class="q-total" data-q-total="1"></span></p>
+</div>
+</section>
+
+<!-- CTA -->
+<section data-reveal="1" style="padding-top:var(--space-section,104px);padding-bottom:var(--space-section,104px);text-align:center;min-height:720px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center">
+<div class="wrap" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;box-sizing:border-box">
+<h2 class="pjs t-display rv">Bereit, Ihr Recruiting<br>zu <span class="hl">transformieren</span>?</h2>
+<a class="btn btn-indigo rv" href="kontakt.html" style="margin-top:94px;transition-delay:.15s">Kostenlos ausprobieren</a>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer id="ueber-uns" style="padding-top:87px">
+<div class="wrap">
+<div style="height:1px;background:#EDEEF3"></div>
+<div style="display:flex;flex-wrap:wrap;gap:40px;padding-top:102px;padding-bottom:88px">
+<div style="flex:1 1 370px;min-width:0;max-width:470px;display:flex;flex-direction:column">
+<img src="assets/media/851c202e204f4aefb85fec09531b87db.png" alt="madita.ai" style="width:44px;height:auto;display:block">
+<p class="t-caption" style="margin:37px 0 0;max-width:370px">Madita ist die KI-Voice-Interview-Plattform für strukturiertes, kriterienbasiertes Screening. Wir interviewen jede:n Bewerber:in individuell, transkribieren und werten strukturiert aus - DSGVO-konform, in 90+ Sprachen, mit jedem ATS integrierbar.</p>
+<a href="#linkedin" aria-label="Madita auf LinkedIn und X" style="margin-top:28px;display:inline-flex;min-height:44px;align-items:center"><img src="assets/media/d7ff59af6da66c113c0cebe76765e49b.png" alt="LinkedIn und X" style="width:66px;height:auto;display:block"></a>
+</div>
+<nav aria-label="Produkt" style="flex:0 1 200px">
+<p style="margin:0 0 12px;font-size:12px;font-weight:700">Produkt</p>
+<a class="footlink" href="#produkt">Praxiserfahrungen</a><a class="footlink" href="#so-funktionierts">So funktioniert's</a><a class="footlink" href="#vorteile">Warum Madita</a><a class="footlink" href="#roi">ROI &amp; Kennzahlen</a><a class="footlink" href="#features">Features</a><a class="footlink" href="#prozess">Prozess</a><a class="footlink" href="#sprachen">Sprachen</a><a class="footlink" href="preise.html">Preise</a><a class="footlink" href="compliance.html">Compliance</a>
+</nav>
+<nav id="branchen" aria-label="Branchen" style="flex:0 1 200px">
+<p style="margin:0 0 12px;font-size:12px;font-weight:700">Branchen</p>
+<a class="footlink" href="#b">Gesundheitswesen</a><a class="footlink" href="#b">Einzelhandel</a><a class="footlink" href="#b">Handwerk</a><a class="footlink" href="#b">Vertrieb</a><a class="footlink" href="#b">Beratung &amp; Recht</a><a class="footlink" href="#b">Hotel &amp; Gastronomie</a><a class="footlink" href="#b">Transport &amp; Logistik</a><a class="footlink" href="#b">Öffentlicher Dienst</a>
+</nav>
+<div style="flex:0 1 202px;display:flex;flex-direction:column">
+<nav aria-label="Unternehmen">
+<p style="margin:0 0 12px;font-size:12px;font-weight:700">Unternehmen</p>
+<a class="footlink" href="#u">Über uns</a><a class="footlink" href="#u">Presse</a><a class="footlink" href="kontakt.html">Kostenlos ausprobieren</a><a class="footlink" href="#u">Agentic Recruiting Forum 2026</a>
+</nav>
+<img src="assets/media/3766662ad721d5962703de17b0c70b54.png" alt="HR Innovation Award Gewinner 2026, Zukunft Personal" style="width:172px;height:auto;display:block;margin-top:46px">
+</div>
+</div>
+</div>
+<div style="background:#343DBA">
+<div class="wrap" style="display:flex;flex-wrap:wrap;align-items:center;gap:24px 45px;min-height:108px;padding-top:20px;padding-bottom:20px;box-sizing:border-box">
+<div style="flex:0 1 291px">
+<p style="margin:0;color:#FFFFFF;font-weight:700;font-size:15px">Newsletter</p>
+<p class="t-caption" style="margin:4px 0 0;color:var(--indigo-tint)">Recruiting-Tipps und Events direkt ins Postfach.</p>
+</div>
+<div style="flex:1 1 160px">
+<p class="t-caption" style="margin:0;color:var(--indigo-tint);font-weight:500">Geschäftskunden-Hotline</p>
+<p style="margin:5px 0 0;color:#FFFFFF;font-weight:700;font-size:15px">+49 30 30 80 95 50</p>
+</div>
+<form onSubmit="{{noop}}" style="display:flex;flex-wrap:wrap;gap:25px;align-items:center">
+<label for="nl-mail" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">E-Mail für den Newsletter</label>
+<input id="nl-mail" type="email" placeholder="name@firma.de" autocomplete="email" style="width:min(435px,100%);height:var(--control-md);border-radius:var(--radius-full);border:0;padding:0 21px;font-family:inherit;font-weight:700;font-size:15px;box-sizing:border-box">
+<button type="submit" class="btn btn-dark" style="min-width:159px">Jetzt anmelden</button>
+</form>
+</div>
+</div>
+<div class="wrap" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding-top:30px;padding-bottom:40px">
+<p class="t-caption" style="margin:0">© 2026 Madita - betrieben von der HeyJobs GmbH, Berlin</p>
+<div style="display:flex;gap:7px">
+<span style="display:inline-flex;align-items:center;min-height:28px;padding:0 10px;border-radius:var(--radius-sm);background:var(--grey);color:var(--white);font-size:12px;font-weight:500">Kununu Top Company</span>
+<span style="display:inline-flex;align-items:center;min-height:28px;padding:0 10px;border-radius:var(--radius-sm);background:var(--grey);color:var(--white);font-size:12px;font-weight:500">4.2 ★ Glassdoor</span>
+</div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"statSeconds":{"editor":"range","min":2,"max":10,"step":1,"unit":"s","default":4},"stepSeconds":{"editor":"range","min":3,"max":12,"step":1,"unit":"s","default":6},"$preview":{"width":1440,"height":7300}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { step: 0, prog: 0, stat: 0, prevStat: 2, typed: 0, paused: false, muted: true, scrolled: false, voice: 'idle', voiceTyped: 0 };
+}
+componentDidMount() {
+let reduced = false;
+try { reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+this.reduced = reduced;
+const els = Array.from(document.querySelectorAll('[data-reveal]'));
+try {
+if (reduced || !window.IntersectionObserver) { els.forEach((el) => el.classList.add('in')); }
+else {
+this.io = new IntersectionObserver((entries) => { entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); this.io.unobserve(en.target); } }); }, { threshold: 0.18 });
+els.forEach((el) => this.io.observe(el));
+}
+} catch (e) { els.forEach((el) => el.classList.add('in')); }
+this.onScroll = () => { const s = (window.scrollY || 0) > 20; if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
+try { window.addEventListener('scroll', this.onScroll, { passive: true }); } catch (e) {}
+this.setupVideoGrow(reduced);
+this.setupNav();
+this.setupStepScroll(reduced);
+this.setupQuotes(reduced);
+this.onBarResize = () => this.placeBar();
+try { window.addEventListener('resize', this.onBarResize); if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => this.placeBar()); setTimeout(() => this.placeBar(), 400); } catch (e) {}
+if (reduced) { this.setState({ typed: 999 }); return; }
+this.tick = setInterval(() => {
+if (this.state.paused || this.stepScroll || this.state.voice !== 'idle') return;
+const secs = this.props.stepSeconds ?? 6;
+const dur = this.state.step === 1 ? secs + 3 : secs;
+let p = this.state.prog + 0.1 / dur;
+if (p >= 1) { this.go((this.state.step + 1) % 3, false); return; }
+const patch = { prog: p };
+if (this.state.step === 1) patch.typed = Math.min(this.words().length, Math.floor(p * dur * 4));
+this.setState(patch);
+}, 100);
+const nextStat = () => { this.setState({ prevStat: this.state.stat, stat: (this.state.stat + 1) % 3 }); this.statTimer = setTimeout(nextStat, (this.props.statSeconds ?? 4) * 1000); };
+this.statTimer = setTimeout(nextStat, (this.props.statSeconds ?? 4) * 1000);
+}
+componentWillUnmount() {
+clearInterval(this.tick); clearTimeout(this.statTimer); clearTimeout(this.resume);
+try { window.removeEventListener('scroll', this.onScroll); } catch (e) {}
+try { window.removeEventListener('scroll', this.onNb); window.removeEventListener('resize', this.onNbResize); } catch (e) {}
+try { window.removeEventListener('scroll', this.onVx); window.removeEventListener('resize', this.onVxResize); cancelAnimationFrame(this.vxRaf); } catch (e) {}
+try { window.removeEventListener('scroll', this.onSt); window.removeEventListener('resize', this.onStResize); cancelAnimationFrame(this.stRaf); } catch (e) {}
+try { window.removeEventListener('scroll', this.onQ); window.removeEventListener('resize', this.onQResize); clearInterval(this.qAuto); clearTimeout(this.qCopyT); cancelAnimationFrame(this.qRaf); } catch (e) {}
+try { if (this.io) this.io.disconnect(); } catch (e) {}
+this.stopVoice(true);
+try { window.removeEventListener('resize', this.onBarResize); } catch (e) {}
+}
+setupQuotes(reduced) {
+const wrap = document.querySelector('[data-q-wrap]');
+if (!wrap) return;
+const cards = Array.from(wrap.querySelectorAll('[data-q-card]'));
+if (cards.length < 2) return;
+const titleEl = wrap.querySelector('[data-q-title]'), textEl = wrap.querySelector('[data-q-text]');
+const numEl = wrap.querySelector('[data-q-num]'), totalEl = wrap.querySelector('[data-q-total]');
+const count = cards.length, THUMB = 0.22, GAP = 0.06, DRIFT = 0.5;
+let index = -1, w = 0, h = 0, cols = [], lastMove = 0, scrollMode = false;
+// Position relativ zur aktuellen Karte: 0 groß in der Mitte, 1 klein rechts unten, -1 klein links oben
+const pose = (rel) => {
+const sw = w * THUMB, sh = h * THUMB, nx = w / 2 + w * GAP + sw / 2, ny = h / 2 - sh / 2;
+if (rel === 0) return [0, 0, 1, 3];
+if (rel === 1) return [nx, ny, THUMB, 2];
+if (rel === -1) return [-nx, -ny, THUMB, 1];
+if (rel > 1) return [nx, ny, 0, 0];
+const d = (sw + w * GAP) * DRIFT; return [-nx - d, -ny - d, 0, 0];
+};
+const place = (k, fast) => cards.forEach((c, i) => {
+const p = pose(i - k);
+c.classList.toggle('q-fast', !!fast);
+c.style.zIndex = p[3];
+c.style.transform = 'translate3d(' + p[0] + 'px,' + p[1] + 'px,0) scale(' + p[2] + ')';
+c.setAttribute('aria-hidden', i === k ? 'false' : 'true');
+});
+const build = () => {
+numEl.textContent = '';
+cols = [0, 1].map(() => {
+const d = document.createElement('span'); d.className = 'q-digit';
+const col = document.createElement('span'); col.className = 'q-digit-col';
+for (let n = 0; n <= 9; n++) { const x = document.createElement('span'); x.textContent = n; col.appendChild(x); }
+d.appendChild(col); numEl.appendChild(d); return col;
+});
+totalEl.textContent = '/ ' + String(count).padStart(2, '0');
+};
+const roll = (k) => { const v = String(k + 1).padStart(2, '0'); cols.forEach((c, i) => { c.style.transform = 'translateY(' + (-Number(v[i]) * 10) + '%)'; }); };
+const setCopy = (k) => { titleEl.textContent = cards[k].getAttribute('data-title') || ''; textEl.textContent = cards[k].getAttribute('data-text') || ''; };
+const swapCopy = (k) => {
+const lines = [titleEl, textEl];
+if (reduced) { setCopy(k); return; }
+lines.forEach((l) => { l.style.transition = 'transform .25s cubic-bezier(.7,0,.16,1)'; l.style.transform = 'translateY(-110%)'; });
+clearTimeout(this.qCopyT);
+this.qCopyT = setTimeout(() => {
+setCopy(k);
+lines.forEach((l) => { l.style.transition = 'none'; l.style.transform = 'translateY(110%)'; });
+void wrap.offsetWidth;
+lines.forEach((l, i) => { l.style.transition = 'transform .6s cubic-bezier(.3,.9,.1,1) ' + (i * 0.06) + 's'; l.style.transform = 'translateY(0)'; });
+}, 250);
+};
+const goTo = (k, first) => {
+if (k === index) return;
+// Kommt der nächste Schritt, während die Karten noch fahren, ohne langsamen Start weiter
+const fast = Date.now() - lastMove < 900; lastMove = Date.now();
+index = k; place(k, fast); roll(k);
+if (first) setCopy(k); else swapCopy(k);
+};
+const measure = () => {
+const vh = window.innerHeight || 900;
+const off = vh > 1600;
+scrollMode = !off;
+wrap.classList.toggle('q-static', off);
+const sh = off ? 820 : Math.max(560, Math.min(vh, 1100));
+wrap.style.setProperty('--qsh', sh + 'px');
+wrap.style.setProperty('--q-run', off ? '0px' : Math.round(count * sh * 0.7) + 'px');
+w = cards[0].offsetWidth; h = cards[0].offsetHeight;
+clearInterval(this.qAuto);
+// Canvas-Übersicht scrollt nicht: dort laufen die Karten von selbst durch
+if (off) this.qAuto = setInterval(() => goTo((index + 1) % count), 3200);
+};
+const update = () => {
+this.qRaf = 0;
+if (!scrollMode) return;
+const r = wrap.getBoundingClientRect(), run = wrap.offsetHeight - wrap.querySelector('[data-q-stage]').offsetHeight;
+const p = Math.max(0, Math.min(0.9999, -r.top / Math.max(1, run)));
+goTo(Math.min(count - 1, Math.floor(p * count)));
+};
+this.onQ = () => { if (!this.qRaf) this.qRaf = requestAnimationFrame(update); };
+this.onQResize = () => { measure(); const k = index; index = -1; cards.forEach((c) => { c.style.transition = 'none'; }); goTo(Math.max(0, k), true); void wrap.offsetWidth; cards.forEach((c) => { c.style.transition = ''; }); this.onQ(); };
+build(); measure();
+cards.forEach((c) => { c.style.transition = 'none'; }); goTo(0, true); void wrap.offsetWidth; cards.forEach((c) => { c.style.transition = ''; });
+update();
+try { window.addEventListener('scroll', this.onQ, { passive: true }); window.addEventListener('resize', this.onQResize); setTimeout(this.onQResize, 600); } catch (e) {}
+}
+setupStepScroll(reduced) {
+const track = document.querySelector('[data-st-track]');
+if (!track) return;
+this.stTrack = track;
+const STAGE = 535;
+const measure = () => {
+const vh = window.innerHeight || 900, vw = document.documentElement.clientWidth || window.innerWidth;
+// Statisch (mit Auto-Wechsel) in der Canvas-Übersicht, mobil und bei reduzierter Bewegung
+const off = reduced || vh > 1600 || vw <= 900;
+this.stepScroll = !off;
+track.classList.toggle('st-static', off);
+if (off) return;
+const h = Math.min(vh, 1100);
+this.stTop = Math.max(110, Math.round((h - STAGE) / 2 + 30));
+track.style.setProperty('--st-top', this.stTop + 'px');
+track.style.setProperty('--st-run', Math.round(3 * h * 0.55) + 'px');
+};
+const update = () => {
+this.stRaf = 0;
+if (!this.stepScroll) return;
+const r = track.getBoundingClientRect();
+const run = track.offsetHeight - STAGE;
+const p = Math.max(0, Math.min(0.9999, (this.stTop - r.top) / run));
+const raw = p * 3, step = Math.floor(raw), prog = Math.round((raw - step) * 100) / 100;
+const patch = {};
+if (step !== this.state.step) { patch.step = step; if (step !== 1) this.stopVoice(); }
+if (prog !== this.state.prog) patch.prog = prog;
+const typed = step === 1 ? Math.min(this.words().length, Math.floor(prog * this.words().length * 1.25)) : (step > 1 ? 999 : 0);
+if (typed !== this.state.typed) patch.typed = typed;
+if (Object.keys(patch).length) this.setState(patch);
+};
+this.onSt = () => { if (!this.stRaf) this.stRaf = requestAnimationFrame(update); };
+this.onStResize = () => { measure(); this.onSt(); };
+measure(); update();
+try { window.addEventListener('scroll', this.onSt, { passive: true }); window.addEventListener('resize', this.onStResize); setTimeout(this.onStResize, 600); } catch (e) {}
+}
+setupNav() {
+const header = document.querySelector('[data-nb]');
+if (!header) return;
+const bg = header.querySelector('[data-nb-bg]');
+const row = header.querySelector('[data-nb-row]');
+const items = Array.from(header.querySelectorAll('[data-nb-item]'));
+const logo = header.querySelector('[data-nb-logo]');
+const cta = header.querySelector('[data-nb-cta]');
+const hideStart = document.querySelector('#produkt');
+const THRESHOLD = 80, RELEASE = 56, OFFSET = 12, PAD = 6, INSET = 18;
+let geo = null, docked = false, lastY = window.scrollY || 0, lastW = 0;
+const apply = () => {
+header.classList.toggle('is-docked', docked);
+items.forEach((el, i) => {
+const t = docked && geo ? 'translateX(' + geo.dx[i] + 'px)' : '';
+el.style.transform = t; el.style.setProperty('--nb-t', (t || 'translateX(0)') + ' translateY(-2px)');
+});
+row.style.transform = docked && geo ? 'translateY(' + geo.dy + 'px)' : 'none';
+bg.style.clipPath = docked && geo
+? 'inset(' + OFFSET + 'px ' + geo.x + 'px ' + geo.bottom + 'px ' + geo.x + 'px round ' + geo.r + 'px)'
+: 'inset(0px 0px ' + (bg.offsetHeight - header.offsetHeight) + 'px 0px round 0px)';
+};
+const measure = () => {
+// Pill-Anordnung kurz einschalten, Positionen lesen, wieder ausschalten (ohne Zeichnen)
+items.forEach((el) => { el.style.transition = 'none'; el.style.transform = ''; });
+row.style.transition = 'none'; row.style.transform = 'none';
+const W = header.getBoundingClientRect().width, barH = header.offsetHeight, bgH = bg.offsetHeight;
+const tops = items.map((el) => el.getBoundingClientRect().left);
+header.classList.add('nb-measure');
+const docks = items.map((el) => el.getBoundingClientRect());
+const ctaH = cta.offsetHeight;
+header.classList.remove('nb-measure');
+const left = docks[items.indexOf(logo)].left, right = docks[items.indexOf(cta)].right;
+const pillW = right - left + INSET + PAD, pillH = ctaH + PAD * 2;
+const x = Math.max(8, (W - pillW) / 2), shift = x + INSET - left;
+geo = { dx: items.map((el, i) => el.getClientRects().length ? Math.round(docks[i].left + shift - tops[i]) : 0), dy: Math.round(OFFSET + pillH / 2 - barH / 2), x: Math.round(x), bottom: Math.round(bgH - OFFSET - pillH), r: pillH / 2 };
+lastW = W;
+void header.offsetWidth;
+items.forEach((el) => { el.style.transition = ''; });
+row.style.transition = '';
+};
+this.onNb = () => {
+const y = window.scrollY || 0;
+const next = docked ? y >= RELEASE : y >= THRESHOLD;
+// Beim Andocken frisch messen: in der Chat-Vorschau sind Stile und Schriften beim Laden oft noch nicht fertig
+if (next !== docked) { docked = next; if (docked) measure(); apply(); }
+// Ab dem Statement-Band: beim Runterscrollen ausblenden, beim Hochscrollen zeigen
+const past = hideStart && hideStart.getBoundingClientRect().top <= 0;
+if (!past) header.classList.remove('is-hidden');
+else if (y > lastY + 2) header.classList.add('is-hidden');
+else if (y < lastY - 2) header.classList.remove('is-hidden');
+lastY = y;
+};
+this.onNbResize = () => { const w = header.getBoundingClientRect().width; if (w !== lastW) { measure(); apply(); } };
+measure(); docked = (window.scrollY || 0) >= THRESHOLD; apply();
+const remeasure = () => { measure(); apply(); };
+try { requestAnimationFrame(() => requestAnimationFrame(remeasure)); window.addEventListener('load', remeasure, { once: true }); setTimeout(remeasure, 600); } catch (e) {}
+try { window.addEventListener('scroll', this.onNb, { passive: true }); window.addEventListener('resize', this.onNbResize); } catch (e) {}
+try { if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { measure(); apply(); }); } catch (e) {}
+}
+setupVideoGrow(reduced) {
+const track = document.querySelector('[data-vx-track]');
+const frame = document.querySelector('[data-vx-frame]');
+if (!track || !frame) return;
+const measure = () => {
+const vh = window.innerHeight || 900;
+// Nicht scrollende Vorschau (Canvas zeigt das ganze Artboard) oder reduzierte Bewegung: statisch
+this.vxOff = reduced || vh > 1600;
+track.classList.toggle('vx-static', this.vxOff);
+if (this.vxOff) { frame.style.width = ''; frame.style.height = ''; frame.style.borderRadius = ''; frame.style.marginTop = ''; return; }
+this.vxH = Math.min(vh, 1100);
+track.style.setProperty('--vxh', this.vxH + 'px');
+this.vxStart = track.getBoundingClientRect().top + (window.scrollY || 0);
+};
+const ease = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+const draw = () => {
+this.vxRaf = 0;
+if (this.vxOff) return;
+const vw = document.documentElement.clientWidth || window.innerWidth;
+const sw = Math.min(588, vw - 40), sh = sw * 331 / 588;
+const range = track.offsetHeight - this.vxH;
+const y = window.scrollY || 0; // Wachstum beginnt mit dem ersten Scrollen
+const p = Math.max(0, Math.min(1, y / (this.vxStart + range * 0.72)));
+const e = ease(p);
+frame.style.width = (sw + (vw - sw) * e) + 'px';
+frame.style.height = (sh + (this.vxH - sh) * e) + 'px';
+frame.style.borderRadius = (15 * (1 - e)) + 'px';
+frame.style.marginTop = (72 * (1 - e)) + 'px'; // bleibt beim Andocken unter der Navigation sichtbar
+frame.style.boxShadow = e > 0.98 ? 'none' : '';
+};
+this.onVx = () => { if (!this.vxRaf) this.vxRaf = requestAnimationFrame(draw); };
+this.onVxResize = () => { measure(); this.onVx(); };
+measure(); draw();
+try { window.addEventListener('scroll', this.onVx, { passive: true }); window.addEventListener('resize', this.onVxResize); } catch (e) {}
+}
+words() { return 'Hallo, ich bin Madita. Schön, dass Sie sich Zeit nehmen. Zum Einstieg: Was hat Sie an dieser Stelle gereizt?'.split(' '); }
+go(step, manual) {
+if (step !== 1) this.stopVoice();
+if (this.stepScroll && this.stTrack) {
+// Im Scroll-Modus springen Tabs und Pfeile an die passende Scrollposition
+const t = this.stTrack, r = t.getBoundingClientRect();
+const run = t.offsetHeight - 535;
+const top = (window.scrollY || 0) + r.top - this.stTop + run * (step + 0.08) / 3;
+try { window.scrollTo({ top: top, behavior: this.reduced ? 'auto' : 'smooth' }); } catch (e) { window.scrollTo(0, top); }
+return;
+}
+this.setState({ step: step, prog: 0, typed: this.reduced ? 999 : 0, paused: !!manual });
+if (manual) { clearTimeout(this.resume); this.resume = setTimeout(() => this.setState({ paused: false }), 9000); }
+}
+waves(w, h, scale) {
+const cols = ['#D4F59A', '#85ECCD', '#FFFFFF', '#95CCFB', '#7ADEEE'];
+const out = [];
+for (let k = 0; k < 5; k++) {
+const amp = (0.22 + 0.13 * ((k * 37) % 5) / 4) * h;
+const freq = (0.018 + 0.006 * k) / scale;
+const mk = (ph) => { let d = ''; for (let x = 0; x <= w; x += 6) { const t = (x - w / 2) / (w * 0.22); const env = Math.exp(-t * t); const y = h / 2 + amp * env * Math.sin(x * freq + ph); d += (x === 0 ? 'M' : 'L') + x + ' ' + y.toFixed(1) + ' '; } return d.trim(); };
+const p0 = k * 1.3;
+const vals = [mk(p0), mk(p0 + 2.1), mk(p0 + 4.2), mk(p0)].join(';');
+out.push({ d0: mk(p0), vals: vals, c: cols[k], sw: k === 2 ? 1.4 : 1.8, op: k === 2 ? 0.9 : 0.75, dur: (3.2 + k * 0.7).toFixed(1) + 's' });
+}
+return out;
+}
+// Maditas Stimme: Untertitel laufen synchron über die Wortgrenzen der Sprachausgabe.
+// Liefert der Browser keine Wortgrenzen, schätzt ein Timer das Tempo (gleiches Tempo wie die Stimme).
+toggleVoice() {
+const v = this.state.voice;
+if (v === 'playing') { this.pauseVoice(); return; }
+if (v === 'paused') { this.resumeVoice(); return; }
+if (this.state.step !== 1) this.go(1, true);
+this.startVoice();
+}
+startVoice() {
+this.stopVoice(true);
+const ws = this.words(), text = ws.join(' ');
+const starts = []; let pos = 0; ws.forEach((w) => { starts.push(pos); pos += w.length + 1; });
+this.vElapsed = 0; this.vLast = Date.now(); this.vBoundary = false;
+this.setState({ voice: 'playing', voiceTyped: 0, paused: true });
+clearTimeout(this.resume);
+const PER_WORD = 0.43; // Sekunden pro Wort bei rate 0.95
+this.vTimer = setInterval(() => {
+if (this.state.voice !== 'playing') { this.vLast = Date.now(); return; }
+const now = Date.now(); this.vElapsed += (now - this.vLast) / 1000; this.vLast = now;
+if (this.vBoundary) return;
+const n = Math.min(ws.length, Math.floor(this.vElapsed / PER_WORD) + 1);
+if (n !== this.state.voiceTyped) this.setState({ voiceTyped: n });
+if (!this.vHasSpeech && this.vElapsed > ws.length * PER_WORD + 0.4) this.endVoice();
+}, 80);
+this.vHasSpeech = false;
+try {
+if (window.speechSynthesis && typeof SpeechSynthesisUtterance !== 'undefined') {
+const u = new SpeechSynthesisUtterance(text); u.lang = 'de-DE'; u.rate = 0.95;
+u.onboundary = (e) => {
+if (e.name && e.name !== 'word') return;
+this.vBoundary = true;
+let i = 0; while (i + 1 < starts.length && starts[i + 1] <= e.charIndex) i++;
+this.setState({ voiceTyped: i + 1 });
+};
+u.onend = () => { if (this.vUtter === u) this.endVoice(); };
+u.onerror = () => { if (this.vUtter === u) { this.vHasSpeech = false; } };
+this.vUtter = u; this.vHasSpeech = true;
+window.speechSynthesis.cancel();
+window.speechSynthesis.speak(u);
+}
+} catch (e) { this.vHasSpeech = false; }
+}
+pauseVoice() {
+try { if (window.speechSynthesis) window.speechSynthesis.pause(); } catch (e) {}
+this.setState({ voice: 'paused' });
+}
+resumeVoice() {
+this.vLast = Date.now();
+try { if (window.speechSynthesis) window.speechSynthesis.resume(); } catch (e) {}
+this.setState({ voice: 'playing' });
+}
+endVoice() {
+clearInterval(this.vTimer); this.vUtter = null;
+this.setState({ voice: 'idle', typed: 999, voiceTyped: 0, paused: false });
+}
+stopVoice(silent) {
+clearInterval(this.vTimer);
+const had = this.vUtter || (this.state && this.state.voice !== 'idle');
+this.vUtter = null;
+try { if (window.speechSynthesis) window.speechSynthesis.cancel(); } catch (e) {}
+if (had && !silent) this.setState({ voice: 'idle', voiceTyped: 0, paused: false });
+}
+placeBar() {
+try {
+const list = document.querySelector('[data-st-tablist]'), bar = document.querySelector('[data-st-bar]');
+if (!list || !bar) return;
+const tab = list.querySelectorAll('[role="tab"]')[this.state.step];
+if (!tab) return;
+bar.style.top = tab.offsetTop + 'px'; bar.style.height = tab.offsetHeight + 'px';
+} catch (e) {}
+}
+renderVals() {
+const st = this.state;
+if (this._barStep !== st.step) { this._barStep = st.step; try { requestAnimationFrame(() => requestAnimationFrame(() => this.placeBar())); } catch (e) {} }
+if (!this._wS) { this._wS = this.waves(352, 123, 0.7); this._wL = this.waves(560, 196, 1); }
+const statTexts = ['50 % der Bewerber:innen interviewen außerhalb der normalen Geschäftszeiten.', '25 % sprechen mit Madita innerhalb von 24 Stunden nach der Bewerbung.', 'Kandidat:innen bewerten ihr Interview mit Madita im Schnitt mit 4,5 von 5 Sternen.'];
+// Ein Text sichtbar: der aktuelle steht mittig, der vorige gleitet nach oben weg, der nächste wartet unsichtbar unten
+const stats = statTexts.map((t, i) => {
+const active = i === st.stat, leaving = i === st.prevStat;
+const y = active ? '-50%' : leaving ? 'calc(-50% - 28px)' : 'calc(-50% + 28px)';
+return { text: t, style: 'transform:translateY(' + y + ');opacity:' + (active ? 1 : 0) + ';' + (!active && !leaving ? 'transition:none;' : '') };
+});
+const statDots = statTexts.map((t, i) => ({ style: 'width:' + (i === st.stat ? 24 : 6) + 'px;opacity:' + (i === st.stat ? 1 : 0.25) }));
+const labels = ['Briefing erstellen', 'Madita interviewt', 'Auswertung erhalten'];
+const tabs = labels.map((l, i) => ({ label: l, on: st.step === i, pick: () => this.go(i, true), style: 'opacity:' + (st.step === i ? 1 : 0.45) }));
+const barH = 50; // feste Länge, springt beim Schrittwechsel
+const layer = (i) => st.step === i ? 'opacity:1;transform:none;z-index:2' : 'opacity:0;transform:scale(.97);z-index:1;pointer-events:none';
+const ws = this.words();
+const words = ws.map((w, i) => {
+const tp = st.voice !== 'idle' ? st.voiceTyped : st.typed;
+let op = 1; const d = i - tp;
+if (d >= 0) op = d < 1 ? 0.55 : d < 3 ? 0.3 : 0.12;
+return { t: w, style: 'opacity:' + op + (d >= 0 && d < 3 ? ';color:#CFD6F0' : '') };
+});
+const steps = [
+{ t: 'Stelle anlegen & Madita briefen.', d: 'Anforderungen definieren, Bewertungskriterien festlegen, fertig. Wie ein Briefing für eine neue Kollegin.' },
+{ t: 'Madita interviewt', d: 'Automatisch, individuell auf Stelle und Lebenslauf abgestimmt.' },
+{ t: 'Auswertung erhalten', d: 'Strukturierte Bewertung, Zusammenfassung, Transkript, Audio-Highlights. Ihr Team übernimmt ab hier.' }];
+const benefits = [
+{ icon: 'assets/media/289c0cff3e324bd615f0e6865bee40ca.png', title: 'Zeit zurück', text: 'Verbringen Sie Ihren Tag mit der Recruiting-Arbeit, die Sie lieben, statt mit Koordination.' },
+{ icon: 'assets/media/cbc79e2fbb723d4e259d2eccdc2cbbd9.png', title: 'Schnellere Einstellungen', text: 'Interviews jederzeit möglich, die strukturierte Auswertung liegt direkt danach vor.' },
+{ icon: 'assets/media/6b3a748e6bf852066f9779144db63e1e.png', title: 'Terminchaos war gestern', text: 'Keine Terminkoordination, kein Nachfassen, kein No-Show-Management auf Ihrer Seite.' },
+{ icon: 'assets/media/72b5bb6c2c3be0dd880fa817d39cc775.png', title: 'Hervorragende Candidate Experience', text: 'Kandidat:innen wählen, wann und wo sie interviewen. In der Sprache ihrer Wahl.' },
+{ icon: 'assets/media/3077f01f6255827c11a1582cff8c3536.png', title: 'Höhere Qualität der Recruiting-Arbeit', text: 'Neue Wertschätzung durch Ihre Hiring Manager und Fachbereiche.' },
+{ icon: 'assets/media/d0b00198eac145d6684cc768b8b403cb.png', title: 'KI-Innovation ohne Aufwand', text: 'Live in Tagen, nicht in Quartalen.' }
+].map((b, i) => Object.assign(b, { delay: 'transition-delay:' + (0.1 + i * 0.08).toFixed(2) + 's' }));
+const quotes = [
+{ cls: 'q-photo', photo: true, img: 'assets/media/bf13a7781d95af600675a1527d3e8b5a.jpg', alt: 'Recruiterin im Gespräch', who: 'Recruiter:in', topic: 'über die Arbeit mit Madita', quote: '„Ich liebe KI. Ich liebe es.“' },
+{ cls: 'q-lime', who: 'Recruiter:in', topic: 'über den größten Hebel im Recruiting', quote: '„Der größte Hebel ist die Automatisierung des Interviews, wo die meiste Recruiting-Zeit investiert wird und der größte Drop-off passiert.“' },
+{ cls: 'q-mint', who: 'Recruiter:in', topic: 'über die Auswahl der Plattform', quote: '„Madita ist die Plattform, die uns am meisten begeistert hat.“' },
+{ cls: 'q-sky', who: 'Stimme aus der Praxis', topic: 'über vergleichbare Gespräche statt Lebensläufen', quote: '„Zum ersten Mal haben wir vergleichbare Unterlagen zu allen Kandidat:innen. Nicht Lebensläufe, echte Gespräche.“' },
+{ cls: 'q-photo', photo: true, img: 'assets/media/2afe089bd983869edef9f2bdf639c6b6.jpg', alt: 'Kandidatin im Interview mit Madita', who: 'Kandidat:in', topic: 'über das Interview mit Madita', quote: '„Besser als ein Telefoninterview mit einem menschlichen Recruiter.“' },
+{ cls: 'q-turquoise', who: 'Kandidat:in', topic: 'über die Fragen im Interview', quote: '„Mir haben die strukturierten Fragen und der direkte Deep Dive gefallen.“' },
+{ cls: 'q-apple', who: 'Kandidat:in', topic: 'über Maditas Zusammenfassungen', quote: '„Gut fand ich, dass Madita meine Antworten nochmal kurz zusammengefasst hat. Das war eigentlich immer richtig interpretiert.“' },
+{ cls: 'q-indigo', who: 'Stimme aus der Praxis', topic: 'über Terminkoordination', quote: '„Man spart sich das ‚Hinterhertelefonieren‘ und das ‚Ghosting‘.“' }
+].map((q) => Object.assign({ photo: false, img: '', alt: '' }, q));
+const video = () => { try { return document.querySelector('[data-v1-video]'); } catch (e) { return null; } };
+return {
+navStyle: 'position:sticky;top:0;z-index:20;background:' + (st.scrolled ? 'rgba(255,255,255,.88)' : '#FFFFFF') + ';backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:' + (st.scrolled ? '0 6px 24px rgba(16,22,101,.08)' : 'none') + ';transition:box-shadow .3s ease, background-color .3s ease',
+muted: st.muted, unmuted: !st.muted, soundLabel: st.muted ? 'Ton einschalten' : 'Ton ausschalten',
+toggleSound: () => { const v = video(); const m = !st.muted; try { if (v) { v.muted = m; if (!m) { v.currentTime = 0; const pr = v.play(); if (pr && pr.catch) pr.catch(() => {}); } } } catch (e) {} this.setState({ muted: m }); },
+stats: stats,
+statDots: statDots,
+tabs: tabs,
+barStyle: 'position:absolute;left:0;width:8px;border-radius:9999px;background:#343DBA;top:' + (26 + st.step * 80) + 'px;height:' + barH + 'px',
+l0: layer(0), l1: layer(1), l2: layer(2),
+dashStyle: 'width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s cubic-bezier(.2,.8,.2,1);transform:' + (st.step === 2 ? 'translateY(0)' : 'translateY(28px)'),
+textStyle: 'transition:opacity .45s ease;opacity:1',
+stepTitle: steps[st.step].t, stepDesc: steps[st.step].d,
+words: words, wavesS: this._wS, wavesL: this._wL,
+prevStep: () => this.go((st.step + 2) % 3, true),
+nextStep: () => this.go((st.step + 1) % 3, true),
+playVoice: () => this.toggleVoice(),
+voicePlaying: st.voice === 'playing', voiceIdle: st.voice !== 'playing',
+voiceLabel: st.voice === 'playing' ? 'Madita pausieren' : (st.voice === 'paused' ? 'Madita weitersprechen lassen' : 'Madita vorlesen lassen'),
+benefits: benefits,
+quotes: quotes,
+noop: (e) => { if (e && e.preventDefault) e.preventDefault(); }
+};
+}
+}
+</script>
+</body>
+</html>
