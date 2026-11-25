@@ -299,6 +299,11 @@ a{color:var(--indigo)}a:hover{color:var(--indigo-dark)}
 .pr-feats{grid-template-columns:minmax(0,1fr);gap:40px;margin-top:56px}
 .pr-final-copy{padding:40px 24px}.pr-final-img{height:320px}.pr-trust{padding:24px}.pr-row-vis{min-height:320px;padding:24px}}
 @media (prefers-reduced-motion:reduce){.pr-task,.pr-line,.pr-cal-grid span.on,.pr-chip,.pr-bar i::after,.pr-note,.pr-card{transition:none}.pr-mtrack,.bub,.pr-wave.on i,.pr-float{animation:none}}
+/* Navigation: Lime-Marker bei Hover, Klick und auf der aktiven Seite */
+.nb .nb-links .navlink::after{display:none}
+.nb .navlink{padding:0 8px;margin:0 -8px;border-radius:var(--radius-xs);background-image:linear-gradient(var(--lime),var(--lime));background-repeat:no-repeat;background-position:0 50%;background-size:0% 1.6em;transition:background-size .35s cubic-bezier(.2,.8,.2,1),color .2s ease}
+.nb .navlink:is(:hover,:focus-visible,:active,[aria-current="page"]),.nb.is-docked .navlink:is(:hover,:focus-visible,:active,[aria-current="page"]){background-size:100% 1.6em;color:var(--grey)}
+@media (prefers-reduced-motion:reduce){.nb .navlink{transition:none}}
 </style>
 </helmet>
 <div style="width:100%;min-width:0;overflow-x:clip">

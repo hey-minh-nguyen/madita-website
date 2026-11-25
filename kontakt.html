@@ -36,6 +36,10 @@ a{color:#343DBA}a:hover{color:#101665}
 .inp{min-height:48px;padding:0 16px;border-radius:5px;border:1px solid #9397A9;background:#FFFFFF;color:#1E1E1E;font-size:16px;font-family:inherit;box-sizing:border-box;width:100%}
 .inp:focus{outline:2px solid #343DBA;outline-offset:1px;border-color:#343DBA}
 @media (max-width:720px){.wrap{padding-left:16px;padding-right:16px}}
+/* Navigation: Lime-Marker bei Hover, Klick und auf der aktiven Seite */
+.nav a{padding:0 8px;margin:0 -8px;border-radius:3px;background-image:linear-gradient(#D4F59A,#D4F59A);background-repeat:no-repeat;background-position:0 50%;background-size:0% 1.6em;transition:background-size .35s cubic-bezier(.2,.8,.2,1),color .2s ease}
+.nav a:is(:hover,:focus-visible,:active,[aria-current="page"]){background-size:100% 1.6em;color:#1E1E1E !important}
+@media (prefers-reduced-motion:reduce){.nav a{transition:none}}
 </style>
 </helmet>
 <div style="width:100%;min-width:0">

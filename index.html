@@ -169,6 +169,11 @@ a{color:var(--indigo)}a:hover{color:var(--indigo-dark)}
 .layer,.vt,.stat,.word,.st-bar,.q-card,.q-digit-col,.q-line{transition:none}
 .nb,.nb.is-hidden,.nb-row,.nb [data-nb-item],.nb-logo-img,.nb-logo-clip{transition:none}
 }
+/* Navigation: Lime-Marker bei Hover, Klick und auf der aktiven Seite */
+.nb .nb-links .navlink::after{display:none}
+.nb .navlink{padding:0 8px;margin:0 -8px;border-radius:var(--radius-xs);background-image:linear-gradient(var(--lime),var(--lime));background-repeat:no-repeat;background-position:0 50%;background-size:0% 1.6em;transition:background-size .35s cubic-bezier(.2,.8,.2,1),color .2s ease}
+.nb .navlink:is(:hover,:focus-visible,:active,[aria-current="page"]),.nb.is-docked .navlink:is(:hover,:focus-visible,:active,[aria-current="page"]){background-size:100% 1.6em;color:var(--grey)}
+@media (prefers-reduced-motion:reduce){.nb .navlink{transition:none}}
 </style>
 </helmet>
 <div style="width:100%;min-width:0;overflow-x:clip">
