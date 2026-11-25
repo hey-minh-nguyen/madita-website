@@ -89,14 +89,16 @@
   window.DCLogic = DCLogic;
 
   function boot() {
-    var host = document.querySelector('x-dc');
+    // Vorlage steckt in <template id="dc-x">, damit der Browser vor dem Rendern
+    // keine Bilder mit {{platzhaltern}} lädt. <x-dc> wird weiter unterstützt.
+    var host = document.getElementById('dc-x') || document.querySelector('x-dc');
     var script = document.querySelector('script[type="text/x-dc"]');
     if (!host) return;
-    // <helmet>: Stylesheets und <style> in den <head> übernehmen
-    var helmet = host.querySelector('helmet');
+    var frag = host.content || host;
+    var helmet = frag.querySelector('helmet');
     if (helmet) { Array.prototype.slice.call(helmet.children).forEach(function (n) { document.head.appendChild(n.cloneNode(true)); }); helmet.parentNode.removeChild(helmet); }
     var tpl = document.createElement('template');
-    tpl.innerHTML = host.innerHTML;
+    if (host.content) tpl.content.appendChild(host.content.cloneNode(true)); else tpl.innerHTML = host.innerHTML;
     var Comp = DCLogic;
     if (script) {
       // Die Klasse stammt aus derselben, mitgelieferten Seite (kein Fremdcode).

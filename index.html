@@ -10,7 +10,7 @@
 <script src="assets/js/dc-lite.js"></script>
 </head>
 <body>
-<x-dc>
+<template id="dc-x">
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap">
@@ -411,7 +411,7 @@ a{color:var(--indigo)}a:hover{color:var(--indigo-dark)}
 </footer>
 
 </div>
-</x-dc>
+</template>
 <script type="text/x-dc" data-dc-script data-props='{"statSeconds":{"editor":"range","min":2,"max":10,"step":1,"unit":"s","default":4},"stepSeconds":{"editor":"range","min":3,"max":12,"step":1,"unit":"s","default":6},"$preview":{"width":1440,"height":7300}}'>
 class Component extends DCLogic {
 constructor(props) {
